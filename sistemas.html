@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas - TechBlog</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .category-hero {
+            background: linear-gradient(135deg, #f97316, #ea580c, #dc2626);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .systems-topics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .topic-card {
+            background: linear-gradient(145deg, #ffffff, #fef2f2);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(249, 115, 22, 0.15);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .topic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f97316, #ea580c, #dc2626);
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(249, 115, 22, 0.25);
+            border-color: #ea580c;
+        }
+        
+        .topic-card h3 {
+            color: #c2410c;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.4rem;
+        }
+        
+        .os-comparison {
+            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+        
+        .os-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .os-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(249, 115, 22, 0.1);
+            border: 2px solid rgba(249, 115, 22, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            text-align: center;
+        }
+        
+        .os-card.windows {
+            border-color: #0078d4;
+        }
+        
+        .os-card.linux {
+            border-color: #f97316;
+        }
+        
+        .os-card.macos {
+            border-color: #9ca3af;
+        }
+        
+        .os-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(249, 115, 22, 0.2);
+        }
+        
+        .os-card i {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .os-card.windows i {
+            color: #0078d4;
+        }
+        
+        .os-card.linux i {
+            color: #f97316;
+        }
+        
+        .os-card.macos i {
+            color: #9ca3af;
+        }
+        
+        .virtualization-section {
+            background: linear-gradient(135deg, #c2410c, #ea580c, #f97316);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+        
+        .virtualization-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .virt-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .virt-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-8px) scale(1.03);
+        }
+        
+        .virt-card i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #fed7aa;
+        }
+        
+        .networking-topics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        
+        .network-card {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(234, 88, 12, 0.1));
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid rgba(249, 115, 22, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .network-card:hover {
+            transform: scale(1.03) rotateY(5deg);
+            border-color: #ea580c;
+            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.2);
+        }
+        
+        .network-card i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .learning-path {
+            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            border: 2px solid rgba(249, 115, 22, 0.3);
+        }
+        
+        .path-item {
+            background: white;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-radius: 12px;
+            border-left: 6px solid #f97316;
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .path-item:hover {
+            transform: translateX(15px);
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.2);
+        }
+        
+        .path-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background: #f97316;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 10px rgba(249, 115, 22, 0.3);
+        }
+        
+        .command-examples {
+            background: #1e1e1e;
+            color: #f8f8f2;
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            font-family: 'Monaco', 'Consolas', monospace;
+        }
+        
+        .command-section {
+            margin: 2rem 0;
+        }
+        
+        .command-section h4 {
+            color: #f97316;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .command-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .command-item {
+            background: rgba(249, 115, 22, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(249, 115, 22, 0.3);
+        }
+        
+        .command {
+            color: #50fa7b;
+            font-weight: bold;
+        }
+        
+        .description {
+            color: #6272a4;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .tool-card {
+            background: linear-gradient(145deg, #ffffff, #fef2f2);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(249, 115, 22, 0.15);
+            border: 2px solid rgba(249, 115, 22, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tool-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.1), transparent);
+            transition: all 0.5s ease;
+        }
+        
+        .tool-card:hover::after {
+            left: 100%;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(249, 115, 22, 0.25);
+            border-color: #ea580c;
+        }
+        
+        .tool-card i {
+            font-size: 3.5rem;
+            color: #f97316;
+            margin-bottom: 1rem;
+        }
+        
+        .security-checklist {
+            background: linear-gradient(135deg, #7f1d1d, #991b1b, #dc2626);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+        
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .checklist-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .checklist-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .checklist-item i {
+            color: #fca5a5;
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .command-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-code"></i>
+                    <span>TechBlog</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="index.html#articles" class="nav-link">Artículos</a>
+                    <a href="index.html#categories" class="nav-link">Categorías</a>
+                    <a href="index.html#about" class="nav-link">Acerca de</a>
+                </div>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Category Hero -->
+    <section class="category-hero">
+        <div class="container">
+            <h1><i class="fas fa-server"></i> Sistemas</h1>
+            <p>Administración y arquitectura de sistemas informáticos</p>
+            <a href="index.html" class="back-button" style="color: white; text-decoration: none; margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-arrow-left"></i> Volver al inicio
+            </a>
+        </div>
+    </section>
+
+    <!-- Category Introduction -->
+    <section style="padding: 60px 0; background: var(--card-background);">
+        <div class="container">
+            <h2 style="color: #c2410c;">¿Qué es la Administración de Sistemas?</h2>
+            <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-secondary); margin: 2rem 0;">
+                La administración de sistemas es el campo de las TI responsable de mantener sistemas informáticos 
+                confiables y eficientes en un entorno de múltiples usuarios. Incluye la gestión de servidores, 
+                redes, seguridad, respaldos y el rendimiento general de la infraestructura tecnológica.
+            </p>
+            
+            <div class="systems-topics">
+                <div class="topic-card">
+                    <h3><i class="fas fa-desktop"></i> Sistemas Operativos</h3>
+                    <p>Gestión y configuración de Windows, Linux y macOS para servidores y estaciones de trabajo.</p>
+                    <ul style="text-align: left; margin-top: 1rem; color: var(--text-secondary);">
+                        <li>Windows Server</li>
+                        <li>Ubuntu/CentOS/RHEL</li>
+                        <li>Automatización con scripts</li>
+                        <li>Actualización y parches</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-card">
+                    <h3><i class="fas fa-network-wired"></i> Redes</h3>
+                    <p>Configuración y mantenimiento de infraestructura de red empresarial.</p>
+                    <ul style="text-align: left; margin-top: 1rem; color: var(--text-secondary);">
+                        <li>Switches y routers</li>
+                        <li>VLANs y subnetting</li>
+                        <li>Firewalls y VPNs</li>
+                        <li>Monitoreo de red</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-card">
+                    <h3><i class="fas fa-cloud"></i> Virtualización</h3>
+                    <p>Implementación y gestión de entornos virtualizados y contenedores.</p>
+                    <ul style="text-align: left; margin-top: 1rem; color: var(--text-secondary);">
+                        <li>VMware, Hyper-V</li>
+                        <li>Docker, Kubernetes</li>
+                        <li>Gestión de recursos</li>
+                        <li>Migración de servicios</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-card">
+                    <h3><i class="fas fa-shield-alt"></i> Seguridad</h3>
+                    <p>Implementación de políticas de seguridad y protección de datos.</p>
+                    <ul style="text-align: left; margin-top: 1rem; color: var(--text-secondary);">
+                        <li>Control de acceso</li>
+                        <li>Copias de seguridad</li>
+                        <li>Monitoreo de eventos</li>
+                        <li>Recuperación ante desastres</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operating Systems Comparison -->
+    <section class="os-comparison">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #c2410c;">Sistemas Operativos para Servidores</h2>
+            
+            <div class="os-grid">
+                <div class="os-card windows">
+                    <i class="fab fa-windows"></i>
+                    <h3>Windows Server</h3>
+                    <p>Ideal para entornos empresariales que utilizan tecnologías Microsoft.</p>
+                    
+                    <div style="text-align: left; margin-top: 1.5rem;">
+                        <h4 style="color: #0078d4;">Características:</h4>
+                        <ul style="font-size: 0.9rem; margin-top: 0.5rem;">
+                            <li>Active Directory</li>
+                            <li>PowerShell</li>
+                            <li>IIS Web Server</li>
+                            <li>Hyper-V</li>
+                            <li>Integración con Office 365</li>
+                        </ul>
+                        
+                        <h4 style="color: #0078d4; margin-top: 1rem;">Ideal para:</h4>
+                        <p style="font-size: 0.9rem;">Empresas con infraestructura Microsoft, aplicaciones .NET, entornos híbridos.</p>
+                    </div>
+                </div>
+                
+                <div class="os-card linux">
+                    <i class="fab fa-linux"></i>
+                    <h3>Linux Server</h3>
+                    <p>Estable, seguro y gratuito. La opción más popular para servidores web.</p>
+                    
+                    <div style="text-align: left; margin-top: 1.5rem;">
+                        <h4 style="color: #f97316;">Distribuciones populares:</h4>
+                        <ul style="font-size: 0.9rem; margin-top: 0.5rem;">
+                            <li>Ubuntu Server</li>
+                            <li>CentOS/RHEL</li>
+                            <li>Debian</li>
+                            <li>SUSE Linux</li>
+                            <li>Amazon Linux</li>
+                        </ul>
+                        
+                        <h4 style="color: #f97316; margin-top: 1rem;">Ideal para:</h4>
+                        <p style="font-size: 0.9rem;">Servidores web, aplicaciones open source, contenedores, alta disponibilidad.</p>
+                    </div>
+                </div>
+                
+                <div class="os-card macos">
+                    <i class="fab fa-apple"></i>
+                    <h3>macOS Server</h3>
+                    <p>Solución especializada para entornos Apple y desarrollo iOS/macOS.</p>
+                    
+                    <div style="text-align: left; margin-top: 1.5rem;">
+                        <h4 style="color: #9ca3af;">Características:</h4>
+                        <ul style="font-size: 0.9rem; margin-top: 0.5rem;">
+                            <li>Xcode Server</li>
+                            <li>Profile Manager</li>
+                            <li>Caching Server</li>
+                            <li>Time Machine Server</li>
+                            <li>Integración con iOS</li>
+                        </ul>
+                        
+                        <h4 style="color: #9ca3af; margin-top: 1rem;">Ideal para:</h4>
+                        <p style="font-size: 0.9rem;">Desarrollo de apps, entornos creativos, gestión de dispositivos Apple.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtualization -->
+    <section class="virtualization-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">🚀 Virtualización y Contenedores</h2>
+            
+            <div class="virtualization-grid">
+                <div class="virt-card">
+                    <i class="fas fa-cube"></i>
+                    <h4>VMware vSphere</h4>
+                    <p>Plataforma de virtualización empresarial líder en el mercado.</p>
+                </div>
+                
+                <div class="virt-card">
+                    <i class="fab fa-microsoft"></i>
+                    <h4>Hyper-V</h4>
+                    <p>Solución de virtualización nativa de Microsoft para Windows.</p>
+                </div>
+                
+                <div class="virt-card">
+                    <i class="fab fa-docker"></i>
+                    <h4>Docker</h4>
+                    <p>Contenedores ligeros para aplicaciones modernas y microservicios.</p>
+                </div>
+                
+                <div class="virt-card">
+                    <i class="fas fa-dharmachakra"></i>
+                    <h4>Kubernetes</h4>
+                    <p>Orquestación de contenedores para aplicaciones escalables.</p>
+                </div>
+                
+                <div class="virt-card">
+                    <i class="fas fa-box-open"></i>
+                    <h4>Proxmox</h4>
+                    <p>Plataforma de virtualización open source con gestión web.</p>
+                </div>
+                
+                <div class="virt-card">
+                    <i class="fab fa-aws"></i>
+                    <h4>AWS EC2</h4>
+                    <p>Instancias virtuales escalables en la nube de Amazon.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Networking Topics -->
+    <section style="padding: 60px 0; background: var(--card-background);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #c2410c;">Administración de Redes</h2>
+            
+            <div class="networking-topics">
+                <div class="network-card">
+                    <i class="fas fa-sitemap"></i>
+                    <h4>Arquitectura de Red</h4>
+                    <p>Diseño de topologías LAN, WAN y MAN</p>
+                </div>
+                
+                <div class="network-card">
+                    <i class="fas fa-ethernet"></i>
+                    <h4>Switching</h4>
+                    <p>Configuración de switches y VLANs</p>
+                </div>
+                
+                <div class="network-card">
+                    <i class="fas fa-route"></i>
+                    <h4>Routing</h4>
+                    <p>Protocolos OSPF, BGP y enrutamiento estático</p>
+                </div>
+                
+                <div class="network-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Firewalls</h4>
+                    <p>Configuración de reglas y políticas de seguridad</p>
+                </div>
+                
+                <div class="network-card">
+                    <i class="fas fa-wifi"></i>
+                    <h4>Redes Inalámbricas</h4>
+                    <p>WiFi empresarial y puntos de acceso</p>
+                </div>
+                
+                <div class="network-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Monitoreo</h4>
+                    <p>SNMP, Nagios y herramientas de supervisión</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Command Examples -->
+    <section class="command-examples">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #f97316;">Comandos Esenciales</h2>
+            
+            <div class="command-section">
+                <h4>Linux - Administración del Sistema</h4>
+                <div class="command-list">
+                    <div class="command-item">
+                        <div class="command">sudo systemctl status nginx</div>
+                        <div class="description">Verificar estado del servicio nginx</div>
+                    </div>
+                    <div class="command-item">
+                        <div class="command">df -h</div>
+                        <div class="description">Mostrar uso del disco en formato legible</div>
+                    </div>
+                    <div class="command-item">
+                        <div class="command">top -p $(pgrep -d, mysql)</div>
+                        <div class="description">Monitorear procesos de MySQL</div>
+                    </div>
+                    <div class="command-item">
+                        <div class="command">netstat -tulpn | grep :80</div>
+                        <div class="description">Ver qué proceso usa el puerto 80</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="command-section">
+                <h4>Windows - PowerShell</h4>
+                <div class="command-list">
+                    <div class="command-item">
+                        <div class="command">Get-Service | Where-Object {$_.Status -eq "Stopped"}</div>
+                        <div class="description">Listar servicios detenidos</div>
+                    </div>
+                    <div class="command-item">
+                        <div class="command">Get-EventLog -LogName System -Newest 50</div>
+                        <div class="description">Últimos 50 eventos del sistema</div>
+                    </div>
+                    <div class="command-item">
+                        <div class="command">Get-WmiObject -Class Win32_LogicalDisk</div>
+                        <div class="description">Información de discos del sistema</div>
+                    </div>
+                    <div class="command-item">
+                        <div class="command">Test-NetConnection -ComputerName google.com -Port 80</div>
+                        <div class="description">Probar conectividad de red</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="command-section">
+                <h4>Docker - Gestión de Contenedores</h4>
+                <div class="command-list">
+                    <div class="command-item">
+                        <div class="command">docker ps -a</div>
+                        <div class="description">Listar todos los contenedores</div>
+                    </div>
+                    <div class="command-item">
+                        <div class="command">docker logs -f container_name</div>
+                        <div class="description">Ver logs en tiempo real</div>
+                    </div>
+                    <div class="command-item">
+                        <div class="command">docker system prune</div>
+                        <div class="description">Limpiar imágenes y contenedores no utilizados</div>
+                    </div>
+                    <div class="command-item">
+                        <div class="command">docker exec -it container_name bash</div>
+                        <div class="description">Acceder al shell del contenedor</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Path -->
+    <section class="learning-path">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #c2410c;">Ruta de Aprendizaje</h2>
+            
+            <div class="path-item">
+                <h4 style="color: #c2410c;">1. Fundamentos de Sistemas</h4>
+                <p>Conceptos básicos de hardware, sistemas operativos y arquitectura de computadores.</p>
+                <small style="color: #64748b;">Tiempo estimado: 2-3 semanas</small>
+            </div>
+            
+            <div class="path-item">
+                <h4 style="color: #c2410c;">2. Linux Básico</h4>
+                <p>Comandos básicos, navegación de archivos, permisos y gestión de usuarios.</p>
+                <small style="color: #64748b;">Tiempo estimado: 3-4 semanas</small>
+            </div>
+            
+            <div class="path-item">
+                <h4 style="color: #c2410c;">3. Redes Fundamentales</h4>
+                <p>Modelo OSI, TCP/IP, subnetting y conceptos básicos de networking.</p>
+                <small style="color: #64748b;">Tiempo estimado: 4-5 semanas</small>
+            </div>
+            
+            <div class="path-item">
+                <h4 style="color: #c2410c;">4. Administración de Servidores</h4>
+                <p>Configuración de servicios web, bases de datos y gestión de usuarios.</p>
+                <small style="color: #64748b;">Tiempo estimado: 6-8 semanas</small>
+            </div>
+            
+            <div class="path-item">
+                <h4 style="color: #c2410c;">5. Virtualización y Contenedores</h4>
+                <p>VMware, Docker, Kubernetes y orquestación de servicios.</p>
+                <small style="color: #64748b;">Tiempo estimado: 4-6 semanas</small>
+            </div>
+            
+            <div class="path-item">
+                <h4 style="color: #c2410c;">6. Automatización y DevOps</h4>
+                <p>Scripts, Ansible, Terraform y pipelines de CI/CD.</p>
+                <small style="color: #64748b;">Tiempo estimado: 6-8 semanas</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools and Technologies -->
+    <section style="padding: 60px 0; background: linear-gradient(135deg, #fef2f2, #fee2e2);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: #c2410c;">Herramientas de Administración</h2>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <i class="fas fa-terminal"></i>
+                    <h4>SSH y Acceso Remoto</h4>
+                    <p>PuTTY, OpenSSH, RDP, VNC</p>
+                    <a href="https://www.putty.org/" target="_blank" style="color: #f97316;">PuTTY</a>
+                </div>
+                
+                <div class="tool-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h4>Monitoreo</h4>
+                    <p>Nagios, Zabbix, Prometheus, Grafana</p>
+                    <a href="https://www.nagios.org/" target="_blank" style="color: #f97316;">Nagios</a>
+                </div>
+                
+                <div class="tool-card">
+                    <i class="fas fa-robot"></i>
+                    <h4>Automatización</h4>
+                    <p>Ansible, Puppet, Chef, Terraform</p>
+                    <a href="https://www.ansible.com/" target="_blank" style="color: #f97316;">Ansible</a>
+                </div>
+                
+                <div class="tool-card">
+                    <i class="fas fa-backup"></i>
+                    <h4>Copias de Seguridad</h4>
+                    <p>Veeam, Bacula, rsync, Duplicati</p>
+                    <a href="https://www.veeam.com/" target="_blank" style="color: #f97316;">Veeam</a>
+                </div>
+                
+                <div class="tool-card">
+                    <i class="fas fa-cogs"></i>
+                    <h4>Configuración</h4>
+                    <p>Git, Docker Compose, Kubernetes YAML</p>
+                    <a href="https://git-scm.com/" target="_blank" style="color: #f97316;">Git</a>
+                </div>
+                
+                <div class="tool-card">
+                    <i class="fas fa-search"></i>
+                    <h4>Logs y Análisis</h4>
+                    <p>ELK Stack, Splunk, Graylog</p>
+                    <a href="https://www.elastic.co/" target="_blank" style="color: #f97316;">Elastic Stack</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Checklist -->
+    <section class="security-checklist">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">🔒 Lista de Verificación de Seguridad</h2>
+            
+            <div class="checklist-grid">
+                <div class="checklist-item">
+                    <h4><i class="fas fa-key"></i> Autenticación</h4>
+                    <ul style="font-size: 0.9rem; margin-top: 0.5rem;">
+                        <li>Passwords seguras</li>
+                        <li>Autenticación 2FA</li>
+                        <li>Claves SSH</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4><i class="fas fa-shield-alt"></i> Firewall</h4>
+                    <ul style="font-size: 0.9rem; margin-top: 0.5rem;">
+                        <li>Reglas restrictivas</li>
+                        <li>Puertos necesarios</li>
+                        <li>Logging activado</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4><i class="fas fa-sync"></i> Actualizaciones</h4>
+                    <ul style="font-size: 0.9rem; margin-top: 0.5rem;">
+                        <li>SO actualizado</li>
+                        <li>Parches de seguridad</li>
+                        <li>Software actualizado</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4><i class="fas fa-backup"></i> Respaldos</h4>
+                    <ul style="font-size: 0.9rem; margin-top: 0.5rem;">
+                        <li>Copias automáticas</li>
+                        <li>Pruebas de restauración</li>
+                        <li>Almacenamiento seguro</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4><i class="fas fa-eye"></i> Monitoreo</h4>
+                    <ul style="font-size: 0.9rem; margin-top: 0.5rem;">
+                        <li>Logs de acceso</li>
+                        <li>Alertas automáticas</li>
+                        <li>Análisis de eventos</li>
+                    </ul>
+                </div>
+                
+                <div class="checklist-item">
+                    <h4><i class="fas fa-users"></i> Accesos</h4>
+                    <ul style="font-size: 0.9rem; margin-top: 0.5rem;">
+                        <li>Principio de menor privilegio</li>
+                        <li>Revisión periódica</li>
+                        <li>Usuarios inactivos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Videos Section -->
+    <section style="padding: 60px 0; background: linear-gradient(135deg, #fff7ed, #fed7aa);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #c2410c;">🎥 Videos de Administración de Sistemas</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                <div class="video-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(194, 65, 12, 0.15); border: 2px solid rgba(194, 65, 12, 0.2); transition: all 0.3s ease; cursor: pointer;" onclick="openYouTubeVideo('dQw4w9WgXcQ')">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Linux desde Cero" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(194, 65, 12, 0.9); color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h4 style="color: #c2410c; margin-bottom: 0.5rem;">🐧 Linux desde Cero</h4>
+                        <p style="color: #ea580c; font-size: 0.9rem; margin-bottom: 1rem;">Aprende los fundamentos de Linux y administración de servidores</p>
+                        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; color: #64748b;">
+                            <span><i class="fas fa-user"></i> NetworkChuck</span>
+                            <span><i class="fas fa-clock"></i> 2 hrs</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="video-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(194, 65, 12, 0.15); border: 2px solid rgba(194, 65, 12, 0.2); transition: all 0.3s ease; cursor: pointer;" onclick="openYouTubeVideo('hdI2bqOjy3c')">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <img src="https://img.youtube.com/vi/hdI2bqOjy3c/maxresdefault.jpg" alt="Docker Completo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(194, 65, 12, 0.9); color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h4 style="color: #c2410c; margin-bottom: 0.5rem;">🐳 Docker Completo</h4>
+                        <p style="color: #ea580c; font-size: 0.9rem; margin-bottom: 1rem;">Domina Docker para containerización y despliegue de aplicaciones</p>
+                        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; color: #64748b;">
+                            <span><i class="fas fa-user"></i> TechWorld</span>
+                            <span><i class="fas fa-clock"></i> 3.5 hrs</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="video-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(194, 65, 12, 0.15); border: 2px solid rgba(194, 65, 12, 0.2); transition: all 0.3s ease; cursor: pointer;" onclick="openYouTubeVideo('Wm6CUkswsNw')">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <img src="https://img.youtube.com/vi/Wm6CUkswsNw/maxresdefault.jpg" alt="AWS Fundamentos" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(194, 65, 12, 0.9); color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h4 style="color: #c2410c; margin-bottom: 0.5rem;">☁️ AWS Fundamentos</h4>
+                        <p style="color: #ea580c; font-size: 0.9rem; margin-bottom: 1rem;">Aprende los servicios básicos de Amazon Web Services</p>
+                        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; color: #64748b;">
+                            <span><i class="fas fa-user"></i> AWS Official</span>
+                            <span><i class="fas fa-clock"></i> 4 hrs</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="video-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(194, 65, 12, 0.15); border: 2px solid rgba(194, 65, 12, 0.2); transition: all 0.3s ease; cursor: pointer;" onclick="openYouTubeVideo('fBNz5xF-Kx4')">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <img src="https://img.youtube.com/vi/fBNz5xF-Kx4/maxresdefault.jpg" alt="Kubernetes Básico" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(194, 65, 12, 0.9); color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h4 style="color: #c2410c; margin-bottom: 0.5rem;">⚙️ Kubernetes Básico</h4>
+                        <p style="color: #ea580c; font-size: 0.9rem; margin-bottom: 1rem;">Orquestación de contenedores con Kubernetes para principiantes</p>
+                        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; color: #64748b;">
+                            <span><i class="fas fa-user"></i> Nana Janashia</span>
+                            <span><i class="fas fa-clock"></i> 2.5 hrs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sources and Blogs Section -->
+    <section style="padding: 60px 0; background: linear-gradient(135deg, #f0f9ff, #e0f2fe);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #c2410c;">📚 Fuentes y Recursos Especializados</h2>
+            
+            <div class="sources-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="source-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(194, 65, 12, 0.15); border: 2px solid rgba(194, 65, 12, 0.2); transition: all 0.3s ease;">
+                    <i class="fas fa-book-open" style="font-size: 2.5rem; color: #ea580c; margin-bottom: 1rem;"></i>
+                    <h4 style="color: #c2410c; margin-bottom: 1rem;">Documentación Oficial</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="https://docs.docker.com/" target="_blank" style="color: #ea580c; text-decoration: none;">🐳 Docker Documentation</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://kubernetes.io/docs/" target="_blank" style="color: #ea580c; text-decoration: none;">⚙️ Kubernetes Docs</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://docs.aws.amazon.com/" target="_blank" style="color: #ea580c; text-decoration: none;">☁️ AWS Documentation</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://www.redhat.com/en/topics" target="_blank" style="color: #ea580c; text-decoration: none;">🎩 Red Hat Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div class="source-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(194, 65, 12, 0.15); border: 2px solid rgba(194, 65, 12, 0.2); transition: all 0.3s ease;">
+                    <i class="fas fa-blog" style="font-size: 2.5rem; color: #ea580c; margin-bottom: 1rem;"></i>
+                    <h4 style="color: #c2410c; margin-bottom: 1rem;">Blogs y Comunidades</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="https://www.linuxjournal.com/" target="_blank" style="color: #ea580c; text-decoration: none;">🐧 Linux Journal</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://sysdig.com/blog/" target="_blank" style="color: #ea580c; text-decoration: none;">📊 Sysdig Blog</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://www.reddit.com/r/sysadmin/" target="_blank" style="color: #ea580c; text-decoration: none;">💬 r/sysadmin</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://serverfault.com/" target="_blank" style="color: #ea580c; text-decoration: none;">⚡ Server Fault</a></li>
+                    </ul>
+                </div>
+                
+                <div class="source-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(194, 65, 12, 0.15); border: 2px solid rgba(194, 65, 12, 0.2); transition: all 0.3s ease;">
+                    <i class="fas fa-graduation-cap" style="font-size: 2.5rem; color: #ea580c; margin-bottom: 1rem;"></i>
+                    <h4 style="color: #c2410c; margin-bottom: 1rem;">Plataformas de Aprendizaje</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="https://linuxacademy.com/" target="_blank" style="color: #ea580c; text-decoration: none;">🎓 Linux Academy</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://www.edx.org/learn/linux" target="_blank" style="color: #ea580c; text-decoration: none;">📚 edX Linux Courses</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://www.cybrary.it/" target="_blank" style="color: #ea580c; text-decoration: none;">🔐 Cybrary</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://kodekloud.com/" target="_blank" style="color: #ea580c; text-decoration: none;">☁️ KodeKloud</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Forum Section -->
+    <section style="padding: 60px 0; background: linear-gradient(135deg, #9a3412, #c2410c, #ea580c);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: white;">💬 Foro de Administradores de Sistemas</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <!-- Add Comment Form -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 15px; margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <h3 style="color: white; margin-bottom: 1.5rem;">💭 Comparte tu experiencia como sysadmin</h3>
+                    <form id="commentForm" style="display: grid; gap: 1rem;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <input type="text" id="userName" placeholder="Tu nombre/sobrenombre" required style="padding: 0.8rem; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.9); color: #333;">
+                            <input type="email" id="userEmail" placeholder="Email (opcional)" style="padding: 0.8rem; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.9); color: #333;">
+                        </div>
+                        <textarea id="commentText" placeholder="¿Qué herramientas usas en tu trabajo? ¿Tienes algún consejo para otros administradores?" required style="padding: 0.8rem; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.9); color: #333; min-height: 100px; resize: vertical;"></textarea>
+                        <button type="submit" style="padding: 0.8rem 2rem; background: #ea580c; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;">
+                            💌 Publicar Comentario
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Comments List -->
+                <div id="commentsList" style="display: grid; gap: 1rem;">
+                    <!-- Los comentarios se cargarán aquí dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Articles -->
+    <section id="related-articles" style="padding: 60px 0; background: var(--card-background);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #c2410c;">Artículos de Sistemas</h2>
+            <div id="systemsArticles" class="articles-grid">
+                <!-- Los artículos de sistemas se cargarán aquí -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechBlog</h3>
+                    <p>Tu fuente de conocimiento tecnológico</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#articles">Artículos</a></li>
+                        <li><a href="index.html#categories">Categorías</a></li>
+                        <li><a href="index.html#about">Acerca de</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechBlog. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- YouTube Modal -->
+    <div id="youtubeModal" class="youtube-modal">
+        <div class="youtube-modal-content">
+            <button class="youtube-close" onclick="closeYouTubeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <iframe id="youtubeIframe" src="" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Systems Administration Forum Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const commentForm = document.getElementById('commentForm');
+            const commentsList = document.getElementById('commentsList');
+            const storageKey = 'systemsComments';
+
+            // Load existing comments
+            loadComments();
+
+            // Handle form submission
+            if (commentForm) {
+                commentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const userName = document.getElementById('userName').value.trim();
+                    const userEmail = document.getElementById('userEmail').value.trim();
+                    const commentText = document.getElementById('commentText').value.trim();
+                    
+                    if (userName && commentText) {
+                        const comment = {
+                            id: Date.now(),
+                            name: userName,
+                            email: userEmail,
+                            text: commentText,
+                            timestamp: new Date().toLocaleString('es-ES')
+                        };
+                        
+                        saveComment(comment);
+                        displayComment(comment);
+                        commentForm.reset();
+                        
+                        // Show success message
+                        showMessage('¡Gracias por compartir tu experiencia como sysadmin! 🖥️', 'success');
+                    }
+                });
+            }
+
+            function loadComments() {
+                const comments = getComments();
+                comments.forEach(comment => displayComment(comment));
+                
+                if (comments.length === 0) {
+                    commentsList.innerHTML = `
+                        <div style="text-align: center; padding: 3rem; color: rgba(255, 255, 255, 0.8);">
+                            <i class="fas fa-comments" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.6;"></i>
+                            <p style="font-size: 1.1rem;">¡Sé el primero en compartir tu experiencia como administrador de sistemas!</p>
+                            <p style="opacity: 0.8;">Cuéntanos sobre las herramientas que usas, desafíos que has enfrentado, o consejos útiles.</p>
+                        </div>
+                    `;
+                }
+            }
+
+            function getComments() {
+                return JSON.parse(localStorage.getItem(storageKey) || '[]');
+            }
+
+            function saveComment(comment) {
+                const comments = getComments();
+                comments.unshift(comment);
+                localStorage.setItem(storageKey, JSON.stringify(comments));
+            }
+
+            function displayComment(comment) {
+                const commentElement = document.createElement('div');
+                commentElement.style.cssText = `
+                    background: rgba(255, 255, 255, 0.1);
+                    backdrop-filter: blur(10px);
+                    padding: 1.5rem;
+                    border-radius: 12px;
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    transition: all 0.3s ease;
+                `;
+                
+                commentElement.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #ea580c, #c2410c); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem;">
+                                ${comment.name.charAt(0).toUpperCase()}
+                            </div>
+                            <div>
+                                <div style="color: #fed7aa; font-weight: bold; font-size: 1rem;">${comment.name}</div>
+                                <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.8rem;">${comment.timestamp}</div>
+                            </div>
+                        </div>
+                        <div style="color: #fb923c;">
+                            <i class="fas fa-server"></i>
+                        </div>
+                    </div>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin: 0;">${comment.text}</p>
+                `;
+                
+                // Add hover effect
+                commentElement.addEventListener('mouseenter', function() {
+                    this.style.background = 'rgba(255, 255, 255, 0.15)';
+                    this.style.transform = 'translateY(-2px)';
+                });
+                
+                commentElement.addEventListener('mouseleave', function() {
+                    this.style.background = 'rgba(255, 255, 255, 0.1)';
+                    this.style.transform = 'translateY(0)';
+                });
+                
+                if (commentsList.children.length === 1 && commentsList.children[0].textContent.includes('¡Sé el primero')) {
+                    commentsList.innerHTML = '';
+                }
+                
+                commentsList.insertBefore(commentElement, commentsList.firstChild);
+            }
+
+            function showMessage(message, type) {
+                const messageDiv = document.createElement('div');
+                messageDiv.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: ${type === 'success' ? '#10b981' : '#ef4444'};
+                    color: white;
+                    padding: 1rem 1.5rem;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                    z-index: 1000;
+                    animation: slideIn 0.3s ease;
+                `;
+                
+                messageDiv.textContent = message;
+                document.body.appendChild(messageDiv);
+                
+                setTimeout(() => {
+                    messageDiv.style.animation = 'slideOut 0.3s ease';
+                    setTimeout(() => document.body.removeChild(messageDiv), 300);
+                }, 3000);
+            }
+
+            // Cargar artículos de sistemas
+            try {
+                fetch('articles.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const systemsArticles = data.articles.filter(article => article.category === 'sistemas');
+                        
+                        const container = document.getElementById('systemsArticles');
+                        if (container && systemsArticles.length > 0) {
+                            container.innerHTML = systemsArticles.map(article => `
+                                <div class="article-card" onclick="window.open('article.html?id=${article.id}', '_blank')" style="cursor: pointer;">
+                                    <div class="article-image">
+                                        <i class="fas fa-server"></i>
+                                    </div>
+                                    <div class="article-content">
+                                        <div class="article-meta">
+                                            <span class="article-category" style="background: #f97316;">Sistemas</span>
+                                            <span class="article-date">${new Date(article.date).toLocaleDateString('es-ES')}</span>
+                                        </div>
+                                        <h3 class="article-title">${article.title}</h3>
+                                        <p class="article-excerpt">${article.excerpt}</p>
+                                        <div class="article-footer">
+                                            <a href="#" class="read-more">
+                                                Leer más <i class="fas fa-arrow-right"></i>
+                                            </a>
+                                            <div class="article-stats">
+                                                <span><i class="fas fa-eye"></i> ${article.views}</span>
+                                                <span><i class="fas fa-heart"></i> ${article.likes}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('');
+                        } else {
+                            container.innerHTML = '<p style="text-align: center; color: var(--text-secondary);">No hay artículos de sistemas disponibles.</p>';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error cargando artículos:', error);
+                    });
+            } catch (error) {
+                console.error('Error en la carga inicial:', error);
+            }
+            
+            // Menú móvil
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+
+        // Función para abrir video de YouTube
+        function openYouTubeVideo(videoId) {
+            const modal = document.getElementById('youtubeModal');
+            const iframe = document.getElementById('youtubeIframe');
+            
+            // Construir URL del video con autoplay
+            const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+            
+            // Configurar iframe y mostrar modal
+            iframe.src = videoUrl;
+            modal.classList.add('active');
+            
+            // Prevenir scroll del body
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Función para cerrar modal de YouTube
+        function closeYouTubeModal() {
+            const modal = document.getElementById('youtubeModal');
+            const iframe = document.getElementById('youtubeIframe');
+            
+            // Limpiar iframe y ocultar modal
+            iframe.src = '';
+            modal.classList.remove('active');
+            
+            // Restaurar scroll del body
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Cerrar modal al hacer click fuera del contenido
+        document.getElementById('youtubeModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeYouTubeModal();
+            }
+        });
+        
+        // Cerrar modal con tecla Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeYouTubeModal();
+            }
+        });
+    </script>
+</body>
+</html>

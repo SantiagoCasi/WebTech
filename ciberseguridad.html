@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciberseguridad - TechBlog</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .category-hero {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .security-topics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .topic-card {
+            background: var(--card-background);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 4px solid #dc2626;
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .topic-card h3 {
+            color: #dc2626;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .security-checklist {
+            background: var(--background-color);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--card-background);
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .checklist-item.critical {
+            border-left: 4px solid #dc2626;
+        }
+        
+        .checklist-item.important {
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .checklist-item.recommended {
+            border-left: 4px solid #10b981;
+        }
+        
+        .threat-level {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .threat-level.high {
+            background: #dc2626;
+        }
+        
+        .threat-level.medium {
+            background: #f59e0b;
+        }
+        
+        .threat-level.low {
+            background: #10b981;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-code"></i>
+                    <span>TechBlog</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="index.html#articles" class="nav-link">Artículos</a>
+                    <a href="index.html#categories" class="nav-link">Categorías</a>
+                    <a href="index.html#about" class="nav-link">Acerca de</a>
+                </div>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Category Hero -->
+    <section class="category-hero">
+        <div class="container">
+            <h1><i class="fas fa-shield-alt"></i> Ciberseguridad</h1>
+            <p>Protege tu información y sistemas digitales</p>
+            <a href="index.html" class="back-button" style="color: white; text-decoration: none; margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-arrow-left"></i> Volver al inicio
+            </a>
+        </div>
+    </section>
+
+    <!-- Category Introduction -->
+    <section style="padding: 60px 0; background: var(--card-background);">
+        <div class="container">
+            <h2>¿Por qué es importante la Ciberseguridad?</h2>
+            <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-secondary); margin: 2rem 0;">
+                En la era digital actual, la ciberseguridad es fundamental para proteger nuestros datos personales, 
+                información empresarial y sistemas críticos. Con el aumento de las amenazas cibernéticas, 
+                es esencial conocer las mejores prácticas de seguridad.
+            </p>
+            
+            <div class="security-topics">
+                <div class="topic-card">
+                    <h3><i class="fas fa-virus"></i> Malware</h3>
+                    <p>Software malicioso diseñado para dañar o acceder ilegalmente a sistemas.</p>
+                    <ul style="text-align: left; margin-top: 1rem; color: var(--text-secondary);">
+                        <li>Virus y gusanos</li>
+                        <li>Ransomware</li>
+                        <li>Spyware y adware</li>
+                        <li>Trojans</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-card">
+                    <h3><i class="fas fa-fishing"></i> Phishing</h3>
+                    <p>Técnicas de ingeniería social para robar credenciales e información sensible.</p>
+                    <ul style="text-align: left; margin-top: 1rem; color: var(--text-secondary);">
+                        <li>Emails fraudulentos</li>
+                        <li>Sitios web falsos</li>
+                        <li>SMS maliciosos</li>
+                        <li>Llamadas de vishing</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-card">
+                    <h3><i class="fas fa-key"></i> Autenticación</h3>
+                    <p>Métodos para verificar la identidad de usuarios y dispositivos.</p>
+                    <ul style="text-align: left; margin-top: 1rem; color: var(--text-secondary);">
+                        <li>Contraseñas seguras</li>
+                        <li>Autenticación de dos factores</li>
+                        <li>Biometría</li>
+                        <li>Gestores de contraseñas</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-card">
+                    <h3><i class="fas fa-network-wired"></i> Seguridad de Red</h3>
+                    <p>Protección de infraestructuras de red contra accesos no autorizados.</p>
+                    <ul style="text-align: left; margin-top: 1rem; color: var(--text-secondary);">
+                        <li>Firewalls</li>
+                        <li>VPN</li>
+                        <li>Detección de intrusos</li>
+                        <li>Cifrado de datos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Checklist -->
+    <section style="padding: 60px 0; background: var(--background-color);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Checklist de Seguridad Personal</h2>
+            
+            <div class="security-checklist">
+                <h3 style="margin-bottom: 2rem;">Medidas Esenciales</h3>
+                
+                <div class="checklist-item critical">
+                    <i class="fas fa-exclamation-triangle" style="color: #dc2626; font-size: 1.5rem;"></i>
+                    <div>
+                        <h4>Contraseñas Únicas y Complejas</h4>
+                        <p>Usa contraseñas diferentes para cada cuenta, mínimo 12 caracteres.</p>
+                    </div>
+                    <span class="threat-level high">Crítico</span>
+                </div>
+                
+                <div class="checklist-item critical">
+                    <i class="fas fa-shield-alt" style="color: #dc2626; font-size: 1.5rem;"></i>
+                    <div>
+                        <h4>Autenticación de Dos Factores (2FA)</h4>
+                        <p>Activa 2FA en todas las cuentas importantes.</p>
+                    </div>
+                    <span class="threat-level high">Crítico</span>
+                </div>
+                
+                <div class="checklist-item important">
+                    <i class="fas fa-download" style="color: #f59e0b; font-size: 1.5rem;"></i>
+                    <div>
+                        <h4>Mantener Software Actualizado</h4>
+                        <p>Instala actualizaciones de seguridad regularmente.</p>
+                    </div>
+                    <span class="threat-level medium">Importante</span>
+                </div>
+                
+                <div class="checklist-item important">
+                    <i class="fas fa-save" style="color: #f59e0b; font-size: 1.5rem;"></i>
+                    <div>
+                        <h4>Copias de Seguridad</h4>
+                        <p>Realiza backups regulares de datos importantes.</p>
+                    </div>
+                    <span class="threat-level medium">Importante</span>
+                </div>
+                
+                <div class="checklist-item recommended">
+                    <i class="fas fa-user-secret" style="color: #10b981; font-size: 1.5rem;"></i>
+                    <div>
+                        <h4>Usar VPN</h4>
+                        <p>Protege tu tráfico en redes públicas.</p>
+                    </div>
+                    <span class="threat-level low">Recomendado</span>
+                </div>
+                
+                <div class="checklist-item recommended">
+                    <i class="fas fa-eye" style="color: #10b981; font-size: 1.5rem;"></i>
+                    <div>
+                        <h4>Monitorear Cuentas</h4>
+                        <p>Revisa regularmente la actividad de tus cuentas.</p>
+                    </div>
+                    <span class="threat-level low">Recomendado</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section style="padding: 60px 0; background: var(--card-background);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Herramientas Recomendadas</h2>
+            
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <i class="fas fa-key"></i>
+                    <h4>Gestores de Contraseñas</h4>
+                    <p>Bitwarden, 1Password, LastPass</p>
+                    <a href="https://bitwarden.com/" target="_blank">Bitwarden</a>
+                </div>
+                
+                <div class="resource-card">
+                    <i class="fas fa-shield-virus"></i>
+                    <h4>Antivirus</h4>
+                    <p>Windows Defender, Malwarebytes, Kaspersky</p>
+                    <a href="https://www.malwarebytes.com/" target="_blank">Malwarebytes</a>
+                </div>
+                
+                <div class="resource-card">
+                    <i class="fas fa-user-secret"></i>
+                    <h4>VPN</h4>
+                    <p>NordVPN, ExpressVPN, ProtonVPN</p>
+                    <a href="https://protonvpn.com/" target="_blank">ProtonVPN</a>
+                </div>
+                
+                <div class="resource-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>Autenticación 2FA</h4>
+                    <p>Google Authenticator, Authy, Microsoft Authenticator</p>
+                    <a href="https://authy.com/" target="_blank">Authy</a>
+                </div>
+                
+                <div class="resource-card">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Email Seguro</h4>
+                    <p>ProtonMail, Tutanota</p>
+                    <a href="https://protonmail.com/" target="_blank">ProtonMail</a>
+                </div>
+                
+                <div class="resource-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>Educación</h4>
+                    <p>KrebsOnSecurity, SANS Institute</p>
+                    <a href="https://krebsonsecurity.com/" target="_blank">KrebsOnSecurity</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Videos Section -->
+    <section style="padding: 60px 0; background: linear-gradient(135deg, #fef2f2, #fecaca);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #b91c1c;">🎥 Videos de Ciberseguridad</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                <div class="video-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(185, 28, 28, 0.15); border: 2px solid rgba(185, 28, 28, 0.2); transition: all 0.3s ease; cursor: pointer;" onclick="openYouTubeVideo('dQw4w9WgXcQ')">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Ethical Hacking Básico" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(185, 28, 28, 0.9); color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h4 style="color: #b91c1c; margin-bottom: 0.5rem;">🛡️ Ethical Hacking Básico</h4>
+                        <p style="color: #dc2626; font-size: 0.9rem; margin-bottom: 1rem;">Aprende los fundamentos del hacking ético y penetration testing</p>
+                        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; color: #64748b;">
+                            <span><i class="fas fa-user"></i> The Cyber Mentor</span>
+                            <span><i class="fas fa-clock"></i> 3.5 hrs</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="video-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(185, 28, 28, 0.15); border: 2px solid rgba(185, 28, 28, 0.2); transition: all 0.3s ease; cursor: pointer;" onclick="openYouTubeVideo('hdI2bqOjy3c')">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <img src="https://img.youtube.com/vi/hdI2bqOjy3c/maxresdefault.jpg" alt="Kali Linux Completo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(185, 28, 28, 0.9); color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h4 style="color: #b91c1c; margin-bottom: 0.5rem;">🐉 Kali Linux Completo</h4>
+                        <p style="color: #dc2626; font-size: 0.9rem; margin-bottom: 1rem;">Domina Kali Linux y sus herramientas para pruebas de seguridad</p>
+                        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; color: #64748b;">
+                            <span><i class="fas fa-user"></i> NetworkChuck</span>
+                            <span><i class="fas fa-clock"></i> 4 hrs</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="video-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(185, 28, 28, 0.15); border: 2px solid rgba(185, 28, 28, 0.2); transition: all 0.3s ease; cursor: pointer;" onclick="openYouTubeVideo('Wm6CUkswsNw')">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <img src="https://img.youtube.com/vi/Wm6CUkswsNw/maxresdefault.jpg" alt="Análisis de Malware" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(185, 28, 28, 0.9); color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h4 style="color: #b91c1c; margin-bottom: 0.5rem;">🦠 Análisis de Malware</h4>
+                        <p style="color: #dc2626; font-size: 0.9rem; margin-bottom: 1rem;">Técnicas de análisis y detección de malware para especialistas</p>
+                        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; color: #64748b;">
+                            <span><i class="fas fa-user"></i> Malware Unicorn</span>
+                            <span><i class="fas fa-clock"></i> 2.5 hrs</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="video-card" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(185, 28, 28, 0.15); border: 2px solid rgba(185, 28, 28, 0.2); transition: all 0.3s ease; cursor: pointer;" onclick="openYouTubeVideo('fBNz5xF-Kx4')">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <img src="https://img.youtube.com/vi/fBNz5xF-Kx4/maxresdefault.jpg" alt="Ingeniería Social" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(185, 28, 28, 0.9); color: white; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <h4 style="color: #b91c1c; margin-bottom: 0.5rem;">🎭 Ingeniería Social</h4>
+                        <p style="color: #dc2626; font-size: 0.9rem; margin-bottom: 1rem;">Comprende y prevén ataques de ingeniería social</p>
+                        <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; color: #64748b;">
+                            <span><i class="fas fa-user"></i> DEF CON</span>
+                            <span><i class="fas fa-clock"></i> 1.5 hrs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sources and Blogs Section -->
+    <section style="padding: 60px 0; background: linear-gradient(135deg, #f0f9ff, #e0f2fe);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #b91c1c;">📚 Fuentes y Recursos Especializados</h2>
+            
+            <div class="sources-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="source-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(185, 28, 28, 0.15); border: 2px solid rgba(185, 28, 28, 0.2); transition: all 0.3s ease;">
+                    <i class="fas fa-book-open" style="font-size: 2.5rem; color: #dc2626; margin-bottom: 1rem;"></i>
+                    <h4 style="color: #b91c1c; margin-bottom: 1rem;">Documentación Oficial</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="https://www.nist.gov/cyberframework" target="_blank" style="color: #dc2626; text-decoration: none;">🏛️ NIST Cybersecurity Framework</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://owasp.org/" target="_blank" style="color: #dc2626; text-decoration: none;">🔒 OWASP Foundation</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://www.mitre.org/attack/" target="_blank" style="color: #dc2626; text-decoration: none;">⚔️ MITRE ATT&CK</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://nvd.nist.gov/" target="_blank" style="color: #dc2626; text-decoration: none;">🗃️ CVE Database</a></li>
+                    </ul>
+                </div>
+                
+                <div class="source-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(185, 28, 28, 0.15); border: 2px solid rgba(185, 28, 28, 0.2); transition: all 0.3s ease;">
+                    <i class="fas fa-blog" style="font-size: 2.5rem; color: #dc2626; margin-bottom: 1rem;"></i>
+                    <h4 style="color: #b91c1c; margin-bottom: 1rem;">Blogs y Comunidades</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="https://krebsonsecurity.com/" target="_blank" style="color: #dc2626; text-decoration: none;">📰 Krebs on Security</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://www.schneier.com/" target="_blank" style="color: #dc2626; text-decoration: none;">🧠 Schneier on Security</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://threatpost.com/" target="_blank" style="color: #dc2626; text-decoration: none;">⚠️ Threatpost</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://www.darkreading.com/" target="_blank" style="color: #dc2626; text-decoration: none;">🌙 Dark Reading</a></li>
+                    </ul>
+                </div>
+                
+                <div class="source-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(185, 28, 28, 0.15); border: 2px solid rgba(185, 28, 28, 0.2); transition: all 0.3s ease;">
+                    <i class="fas fa-graduation-cap" style="font-size: 2.5rem; color: #dc2626; margin-bottom: 1rem;"></i>
+                    <h4 style="color: #b91c1c; margin-bottom: 1rem;">Plataformas de Aprendizaje</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="https://tryhackme.com/" target="_blank" style="color: #dc2626; text-decoration: none;">🎯 TryHackMe</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://www.hackthebox.com/" target="_blank" style="color: #dc2626; text-decoration: none;">📦 Hack The Box</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://www.cybrary.it/" target="_blank" style="color: #dc2626; text-decoration: none;">🎓 Cybrary</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://www.vulnhub.com/" target="_blank" style="color: #dc2626; text-decoration: none;">⚡ VulnHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Forum Section -->
+    <section style="padding: 60px 0; background: linear-gradient(135deg, #7f1d1d, #b91c1c, #dc2626);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: white;">💬 Foro de Ciberseguridad</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <!-- Add Comment Form -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 15px; margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <h3 style="color: white; margin-bottom: 1.5rem;">💭 Comparte tu experiencia en ciberseguridad</h3>
+                    <form id="commentForm" style="display: grid; gap: 1rem;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <input type="text" id="userName" placeholder="Tu nombre/sobrenombre" required style="padding: 0.8rem; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.9); color: #333;">
+                            <input type="email" id="userEmail" placeholder="Email (opcional)" style="padding: 0.8rem; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.9); color: #333;">
+                        </div>
+                        <textarea id="commentText" placeholder="¿En qué área de ciberseguridad te especializas? ¿Tienes alguna experiencia con incidentes o herramientas?" required style="padding: 0.8rem; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.9); color: #333; min-height: 100px; resize: vertical;"></textarea>
+                        <button type="submit" style="padding: 0.8rem 2rem; background: #dc2626; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;">
+                            💌 Publicar Comentario
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Comments List -->
+                <div id="commentsList" style="display: grid; gap: 1rem;">
+                    <!-- Los comentarios se cargarán aquí dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Articles -->
+    <section id="related-articles" style="padding: 60px 0; background: var(--background-color);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Artículos de Ciberseguridad</h2>
+            <div id="securityArticles" class="articles-grid">
+                <!-- Los artículos de ciberseguridad se cargarán aquí -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechBlog</h3>
+                    <p>Tu fuente de conocimiento tecnológico</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#articles">Artículos</a></li>
+                        <li><a href="index.html#categories">Categorías</a></li>
+                        <li><a href="index.html#about">Acerca de</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechBlog. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cybersecurity Forum Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const commentForm = document.getElementById('commentForm');
+            const commentsList = document.getElementById('commentsList');
+            const storageKey = 'cybersecurityComments';
+
+            // Load existing comments
+            loadComments();
+
+            // Handle form submission
+            if (commentForm) {
+                commentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const userName = document.getElementById('userName').value.trim();
+                    const userEmail = document.getElementById('userEmail').value.trim();
+                    const commentText = document.getElementById('commentText').value.trim();
+                    
+                    if (userName && commentText) {
+                        const comment = {
+                            id: Date.now(),
+                            name: userName,
+                            email: userEmail,
+                            text: commentText,
+                            timestamp: new Date().toLocaleString('es-ES')
+                        };
+                        
+                        saveComment(comment);
+                        displayComment(comment);
+                        commentForm.reset();
+                        
+                        // Show success message
+                        showMessage('¡Gracias por compartir tu experiencia en ciberseguridad! 🛡️', 'success');
+                    }
+                });
+            }
+
+            function loadComments() {
+                const comments = getComments();
+                comments.forEach(comment => displayComment(comment));
+                
+                if (comments.length === 0) {
+                    commentsList.innerHTML = `
+                        <div style="text-align: center; padding: 3rem; color: rgba(255, 255, 255, 0.8);">
+                            <i class="fas fa-comments" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.6;"></i>
+                            <p style="font-size: 1.1rem;">¡Sé el primero en compartir tu experiencia en ciberseguridad!</p>
+                            <p style="opacity: 0.8;">Cuéntanos sobre tu especialización, herramientas que usas, o casos interesantes.</p>
+                        </div>
+                    `;
+                }
+            }
+
+            function getComments() {
+                return JSON.parse(localStorage.getItem(storageKey) || '[]');
+            }
+
+            function saveComment(comment) {
+                const comments = getComments();
+                comments.unshift(comment);
+                localStorage.setItem(storageKey, JSON.stringify(comments));
+            }
+
+            function displayComment(comment) {
+                const commentElement = document.createElement('div');
+                commentElement.style.cssText = `
+                    background: rgba(255, 255, 255, 0.1);
+                    backdrop-filter: blur(10px);
+                    padding: 1.5rem;
+                    border-radius: 12px;
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    transition: all 0.3s ease;
+                `;
+                
+                commentElement.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #dc2626, #b91c1c); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem;">
+                                ${comment.name.charAt(0).toUpperCase()}
+                            </div>
+                            <div>
+                                <div style="color: #fca5a5; font-weight: bold; font-size: 1rem;">${comment.name}</div>
+                                <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.8rem;">${comment.timestamp}</div>
+                            </div>
+                        </div>
+                        <div style="color: #f87171;">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                    </div>
+                    <p style="color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin: 0;">${comment.text}</p>
+                `;
+                
+                // Add hover effect
+                commentElement.addEventListener('mouseenter', function() {
+                    this.style.background = 'rgba(255, 255, 255, 0.15)';
+                    this.style.transform = 'translateY(-2px)';
+                });
+                
+                commentElement.addEventListener('mouseleave', function() {
+                    this.style.background = 'rgba(255, 255, 255, 0.1)';
+                    this.style.transform = 'translateY(0)';
+                });
+                
+                if (commentsList.children.length === 1 && commentsList.children[0].textContent.includes('¡Sé el primero')) {
+                    commentsList.innerHTML = '';
+                }
+                
+                commentsList.insertBefore(commentElement, commentsList.firstChild);
+            }
+
+            function showMessage(message, type) {
+                const messageDiv = document.createElement('div');
+                messageDiv.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: ${type === 'success' ? '#10b981' : '#ef4444'};
+                    color: white;
+                    padding: 1rem 1.5rem;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                    z-index: 1000;
+                    animation: slideIn 0.3s ease;
+                `;
+                
+                messageDiv.textContent = message;
+                document.body.appendChild(messageDiv);
+                
+                setTimeout(() => {
+                    messageDiv.style.animation = 'slideOut 0.3s ease';
+                    setTimeout(() => document.body.removeChild(messageDiv), 300);
+                }, 3000);
+            }
+
+            // Función para abrir video de YouTube
+            window.openYouTubeVideo = function(videoId) {
+                const modal = document.getElementById('youtubeModal');
+                const iframe = document.getElementById('youtubeIframe');
+                
+                // Construir URL del video con autoplay
+                const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+                
+                // Configurar iframe y mostrar modal
+                iframe.src = videoUrl;
+                modal.classList.add('active');
+                
+                // Prevenir scroll del body
+                document.body.style.overflow = 'hidden';
+            }
+            
+            // Función para cerrar modal de YouTube
+            window.closeYouTubeModal = function() {
+                const modal = document.getElementById('youtubeModal');
+                const iframe = document.getElementById('youtubeIframe');
+                
+                // Limpiar iframe y ocultar modal
+                iframe.src = '';
+                modal.classList.remove('active');
+                
+                // Restaurar scroll del body
+                document.body.style.overflow = 'auto';
+            }
+            
+            // Cerrar modal al hacer click fuera del contenido
+            const modal = document.getElementById('youtubeModal');
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        closeYouTubeModal();
+                    }
+                });
+            }
+            
+            // Cerrar modal con tecla Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeYouTubeModal();
+                }
+            });
+
+            // Cargar artículos de ciberseguridad
+            try {
+                fetch('articles.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const securityArticles = data.articles.filter(article => article.category === 'ciberseguridad');
+                        
+                        const container = document.getElementById('securityArticles');
+                        if (container && securityArticles.length > 0) {
+                            container.innerHTML = securityArticles.map(article => `
+                                <div class="article-card" onclick="window.open('article.html?id=${article.id}', '_blank')">
+                                    <div class="article-image">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="article-content">
+                                        <div class="article-meta">
+                                            <span class="article-category" style="background: #ef4444;">Ciberseguridad</span>
+                                            <span class="article-date">${new Date(article.date).toLocaleDateString('es-ES')}</span>
+                                        </div>
+                                        <h3 class="article-title">${article.title}</h3>
+                                        <p class="article-excerpt">${article.excerpt}</p>
+                                        <div class="article-footer">
+                                            <a href="#" class="read-more">
+                                                Leer más <i class="fas fa-arrow-right"></i>
+                                            </a>
+                                            <div class="article-stats">
+                                                <span><i class="fas fa-eye"></i> ${article.views}</span>
+                                                <span><i class="fas fa-heart"></i> ${article.likes}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('');
+                        } else {
+                            container.innerHTML = '<p style="text-align: center; color: var(--text-secondary);">No hay artículos de ciberseguridad disponibles.</p>';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error cargando artículos:', error);
+                    });
+            } catch (error) {
+                console.error('Error en la carga inicial:', error);
+            }
+            
+            // Menú móvil
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+
+    <!-- YouTube Modal -->
+    <div id="youtubeModal" class="youtube-modal">
+        <div class="youtube-modal-content">
+            <button class="youtube-close" onclick="closeYouTubeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <iframe id="youtubeIframe" src="" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+    </div>
+</body>
+</html>

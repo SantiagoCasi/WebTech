@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inteligencia Artificial - TechBlog</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .category-hero {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7, #c084fc);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .ai-topics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .topic-card {
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .topic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8b5cf6, #a855f7, #c084fc);
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.25);
+            border-color: #a855f7;
+        }
+        
+        .topic-card h3 {
+            color: #7c3aed;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.4rem;
+        }
+        
+        .ai-applications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        
+        .application-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(168, 85, 247, 0.1));
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid rgba(139, 92, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .application-card:hover {
+            transform: scale(1.02);
+            border-color: #a855f7;
+            box-shadow: 0 10px 25px rgba(139, 92, 246, 0.2);
+        }
+        
+        .application-card h4 {
+            color: #7c3aed;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .learning-path {
+            background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            border: 2px solid rgba(139, 92, 246, 0.3);
+        }
+        
+        .path-step {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 12px;
+            border-left: 5px solid #8b5cf6;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .path-step:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.2);
+        }
+        
+        .ai-tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .tool-card {
+            background: linear-gradient(145deg, #ffffff, #faf5ff);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.15);
+            border: 2px solid rgba(139, 92, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(139, 92, 246, 0.25);
+            border-color: #a855f7;
+        }
+        
+        .tool-card i {
+            font-size: 3rem;
+            color: #8b5cf6;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .future-trends {
+            background: linear-gradient(135deg, #1e1b4b, #312e81, #5b21b6);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .trend-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .trend-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        /* YouTube Videos Section */
+        .youtube-videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .youtube-video-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .youtube-video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        
+        .video-thumbnail:hover img {
+            transform: scale(1.05);
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 0, 0, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+        }
+        
+        .play-button:hover {
+            background: rgba(255, 0, 0, 1);
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.6);
+        }
+        
+        .video-duration {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .video-info {
+            padding: 1.5rem;
+            color: white;
+        }
+        
+        .video-info h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+        
+        .video-info p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .video-stats {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .video-stats span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        /* YouTube Modal */
+        .youtube-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            padding: 2rem;
+        }
+        
+        .youtube-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .youtube-modal-content {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            aspect-ratio: 16/9;
+        }
+        
+        .youtube-modal iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+        
+        .youtube-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 5px;
+            line-height: 1;
+        }
+        
+        .youtube-close:hover {
+            color: #ff6b6b;
+        }
+        
+        @media (max-width: 768px) {
+            .youtube-videos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .youtube-modal {
+                padding: 1rem;
+            }
+            
+            .video-thumbnail {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-code"></i>
+                    <span>TechBlog</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="index.html#articles" class="nav-link">Artículos</a>
+                    <a href="index.html#categories" class="nav-link">Categorías</a>
+                    <a href="index.html#about" class="nav-link">Acerca de</a>
+                </div>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Category Hero -->
+    <section class="category-hero">
+        <div class="container">
+            <h1><i class="fas fa-brain"></i> Inteligencia Artificial</h1>
+            <p>El futuro de la tecnología está aquí</p>
+            <a href="index.html" class="back-button" style="color: white; text-decoration: none; margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-arrow-left"></i> Volver al inicio
+            </a>
+        </div>
+    </section>
+
+    <!-- Category Introduction -->
+    <section style="padding: 60px 0; background: var(--card-background);">
+        <div class="container">
+            <h2 style="color: #7c3aed;">¿Qué es la Inteligencia Artificial?</h2>
+            <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-secondary); margin: 2rem 0;">
+                La Inteligencia Artificial es la simulación de procesos de inteligencia humana por parte de máquinas. 
+                Incluye aprendizaje automático, procesamiento de lenguaje natural, visión por computadora y robótica. 
+                La IA está revolucionando industrias completas y creando nuevas oportunidades profesionales.
+            </p>
+            
+            <div class="ai-topics">
+                <div class="topic-card">
+                    <h3><i class="fas fa-robot"></i> Machine Learning</h3>
+                    <p>Algoritmos que aprenden y mejoran automáticamente a través de la experiencia sin ser programados explícitamente.</p>
+                    <ul style="text-align: left; margin-top: 1rem; color: var(--text-secondary);">
+                        <li>Aprendizaje supervisado</li>
+                        <li>Aprendizaje no supervisado</li>
+                        <li>Aprendizaje por refuerzo</li>
+                        <li>Redes neuronales</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-card">
+                    <h3><i class="fas fa-eye"></i> Visión por Computadora</h3>
+                    <p>Capacidad de las máquinas para interpretar y entender el contenido visual del mundo.</p>
+                    <ul style="text-align: left; margin-top: 1rem; color: var(--text-secondary);">
+                        <li>Reconocimiento de imágenes</li>
+                        <li>Detección de objetos</li>
+                        <li>Análisis facial</li>
+                        <li>Realidad aumentada</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-card">
+                    <h3><i class="fas fa-comments"></i> Procesamiento de Lenguaje Natural</h3>
+                    <p>Interacción entre computadoras y lenguaje humano, permitiendo que las máquinas entiendan texto.</p>
+                    <ul style="text-align: left; margin-top: 1rem; color: var(--text-secondary);">
+                        <li>Chatbots inteligentes</li>
+                        <li>Traducción automática</li>
+                        <li>Análisis de sentimientos</li>
+                        <li>Generación de texto</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-card">
+                    <h3><i class="fas fa-layer-group"></i> Deep Learning</h3>
+                    <p>Redes neuronales profundas que imitan el funcionamiento del cerebro humano para resolver problemas complejos.</p>
+                    <ul style="text-align: left; margin-top: 1rem; color: var(--text-secondary);">
+                        <li>Redes neuronales profundas</li>
+                        <li>CNN y RNN</li>
+                        <li>Transformers</li>
+                        <li>GANs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Applications -->
+    <section style="padding: 60px 0; background: linear-gradient(135deg, #faf5ff, #f3e8ff);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #7c3aed;">Aplicaciones de la IA</h2>
+            
+            <div class="ai-applications">
+                <div class="application-card">
+                    <h4><i class="fas fa-stethoscope"></i> Medicina</h4>
+                    <p>Diagnóstico por imágenes, descubrimiento de medicamentos, cirugía asistida por robots.</p>
+                </div>
+                
+                <div class="application-card">
+                    <h4><i class="fas fa-car"></i> Transporte</h4>
+                    <p>Vehículos autónomos, optimización de rutas, mantenimiento predictivo.</p>
+                </div>
+                
+                <div class="application-card">
+                    <h4><i class="fas fa-chart-line"></i> Finanzas</h4>
+                    <p>Detección de fraudes, trading algorítmico, análisis de riesgos.</p>
+                </div>
+                
+                <div class="application-card">
+                    <h4><i class="fas fa-shopping-cart"></i> E-commerce</h4>
+                    <p>Sistemas de recomendación, atención al cliente automatizada, optimización de precios.</p>
+                </div>
+                
+                <div class="application-card">
+                    <h4><i class="fas fa-gamepad"></i> Entretenimiento</h4>
+                    <p>Creación de contenido, NPCs inteligentes, personalización de experiencias.</p>
+                </div>
+                
+                <div class="application-card">
+                    <h4><i class="fas fa-industry"></i> Manufactura</h4>
+                    <p>Control de calidad automatizado, mantenimiento predictivo, optimización de procesos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Path -->
+    <section style="padding: 60px 0; background: var(--card-background);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #7c3aed;">Ruta de Aprendizaje en IA</h2>
+            
+            <div class="learning-path">
+                <div class="path-step">
+                    <h4 style="color: #7c3aed;"><i class="fas fa-1"></i> Fundamentos Matemáticos</h4>
+                    <p>Álgebra lineal, cálculo, estadística y probabilidad.</p>
+                </div>
+                
+                <div class="path-step">
+                    <h4 style="color: #7c3aed;"><i class="fas fa-2"></i> Programación</h4>
+                    <p>Python, R, bibliotecas como NumPy, Pandas, Matplotlib.</p>
+                </div>
+                
+                <div class="path-step">
+                    <h4 style="color: #7c3aed;"><i class="fas fa-3"></i> Machine Learning Básico</h4>
+                    <p>Algoritmos supervisados y no supervisados, scikit-learn.</p>
+                </div>
+                
+                <div class="path-step">
+                    <h4 style="color: #7c3aed;"><i class="fas fa-4"></i> Deep Learning</h4>
+                    <p>TensorFlow, PyTorch, redes neuronales profundas.</p>
+                </div>
+                
+                <div class="path-step">
+                    <h4 style="color: #7c3aed;"><i class="fas fa-5"></i> Especialización</h4>
+                    <p>NLP, Computer Vision, RL según tu interés.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Videos Section -->
+    <section style="padding: 60px 0; background: linear-gradient(135deg, #581c87, #7c3aed, #8b5cf6);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: white;">🎥 Videos de Inteligencia Artificial</h2>
+            
+            <div class="youtube-videos-grid">
+                <!-- Video 1: Introducción a Machine Learning -->
+                <div class="youtube-video-card">
+                    <div class="video-thumbnail" onclick="openYouTubeVideo('aircAruvnKk')">
+                        <img src="https://img.youtube.com/vi/aircAruvnKk/maxresdefault.jpg" alt="Neural Networks">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-duration">19:13</div>
+                    </div>
+                    <div class="video-info">
+                        <h4>¿Qué son las Redes Neuronales?</h4>
+                        <p>Introducción visual a las redes neuronales y deep learning</p>
+                        <div class="video-stats">
+                            <span><i class="fas fa-eye"></i> 2.8M vistas</span>
+                            <span><i class="fas fa-thumbs-up"></i> 89K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2: Machine Learning Explained -->
+                <div class="youtube-video-card">
+                    <div class="video-thumbnail" onclick="openYouTubeVideo('HcqpanDadyQ')">
+                        <img src="https://img.youtube.com/vi/HcqpanDadyQ/maxresdefault.jpg" alt="Machine Learning">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-duration">15:45</div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Machine Learning Explicado</h4>
+                        <p>Conceptos fundamentales de ML para principiantes</p>
+                        <div class="video-stats">
+                            <span><i class="fas fa-eye"></i> 1.5M vistas</span>
+                            <span><i class="fas fa-thumbs-up"></i> 65K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 3: Python for AI -->
+                <div class="youtube-video-card">
+                    <div class="video-thumbnail" onclick="openYouTubeVideo('JL_grPUnXzY')">
+                        <img src="https://img.youtube.com/vi/JL_grPUnXzY/maxresdefault.jpg" alt="Python AI">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-duration">28:30</div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Python para Inteligencia Artificial</h4>
+                        <p>Bibliotecas esenciales: NumPy, Pandas, TensorFlow</p>
+                        <div class="video-stats">
+                            <span><i class="fas fa-eye"></i> 950K vistas</span>
+                            <span><i class="fas fa-thumbs-up"></i> 42K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 4: Deep Learning -->
+                <div class="youtube-video-card">
+                    <div class="video-thumbnail" onclick="openYouTubeVideo('CS4cs9xVecg')">
+                        <img src="https://img.youtube.com/vi/CS4cs9xVecg/maxresdefault.jpg" alt="Deep Learning">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-duration">25:20</div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Deep Learning con TensorFlow</h4>
+                        <p>Construcción de tu primera red neuronal profunda</p>
+                        <div class="video-stats">
+                            <span><i class="fas fa-eye"></i> 1.2M vistas</span>
+                            <span><i class="fas fa-thumbs-up"></i> 58K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 5: Computer Vision -->
+                <div class="youtube-video-card">
+                    <div class="video-thumbnail" onclick="openYouTubeVideo('oXlwWbU8l2o')">
+                        <img src="https://img.youtube.com/vi/oXlwWbU8l2o/maxresdefault.jpg" alt="Computer Vision">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-duration">22:15</div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Computer Vision con OpenCV</h4>
+                        <p>Procesamiento de imágenes y reconocimiento visual</p>
+                        <div class="video-stats">
+                            <span><i class="fas fa-eye"></i> 780K vistas</span>
+                            <span><i class="fas fa-thumbs-up"></i> 35K</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 6: NLP Basics -->
+                <div class="youtube-video-card">
+                    <div class="video-thumbnail" onclick="openYouTubeVideo('xvqsFTUsOmc')">
+                        <img src="https://img.youtube.com/vi/xvqsFTUsOmc/maxresdefault.jpg" alt="NLP">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-duration">18:45</div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Natural Language Processing</h4>
+                        <p>Procesamiento de texto y análisis de sentimientos</p>
+                        <div class="video-stats">
+                            <span><i class="fas fa-eye"></i> 640K vistas</span>
+                            <span><i class="fas fa-thumbs-up"></i> 28K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools and Frameworks -->
+    <section style="padding: 60px 0; background: linear-gradient(135deg, #faf5ff, #f3e8ff);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: #7c3aed;">Herramientas y Frameworks</h2>
+            
+            <div class="ai-tools">
+                <div class="tool-card">
+                    <i class="fab fa-python"></i>
+                    <h4>Python</h4>
+                    <p>Lenguaje principal para IA</p>
+                    <a href="https://python.org/" target="_blank" style="color: #8b5cf6;">Python.org</a>
+                </div>
+                
+                <div class="tool-card">
+                    <i class="fas fa-brain"></i>
+                    <h4>TensorFlow</h4>
+                    <p>Framework de Google para ML</p>
+                    <a href="https://tensorflow.org/" target="_blank" style="color: #8b5cf6;">TensorFlow</a>
+                </div>
+                
+                <div class="tool-card">
+                    <i class="fas fa-fire"></i>
+                    <h4>PyTorch</h4>
+                    <p>Framework de Facebook para DL</p>
+                    <a href="https://pytorch.org/" target="_blank" style="color: #8b5cf6;">PyTorch</a>
+                </div>
+                
+                <div class="tool-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h4>Jupyter</h4>
+                    <p>Notebooks interactivos</p>
+                    <a href="https://jupyter.org/" target="_blank" style="color: #8b5cf6;">Jupyter</a>
+                </div>
+                
+                <div class="tool-card">
+                    <i class="fas fa-database"></i>
+                    <h4>Pandas</h4>
+                    <p>Manipulación de datos</p>
+                    <a href="https://pandas.pydata.org/" target="_blank" style="color: #8b5cf6;">Pandas</a>
+                </div>
+                
+                <div class="tool-card">
+                    <i class="fas fa-cogs"></i>
+                    <h4>Scikit-learn</h4>
+                    <p>ML tradicional en Python</p>
+                    <a href="https://scikit-learn.org/" target="_blank" style="color: #8b5cf6;">Scikit-learn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Trends -->
+    <section class="future-trends">
+        <div class="container">
+            <h2 style="margin-bottom: 3rem;">🚀 Tendencias Futuras de la IA</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <div class="trend-item">
+                    <h4><i class="fas fa-atom"></i> IA Cuántica</h4>
+                    <p>Computación cuántica aplicada a la inteligencia artificial</p>
+                </div>
+                
+                <div class="trend-item">
+                    <h4><i class="fas fa-brain"></i> AGI</h4>
+                    <p>Inteligencia Artificial General a nivel humano</p>
+                </div>
+                
+                <div class="trend-item">
+                    <h4><i class="fas fa-robot"></i> Robots Autónomos</h4>
+                    <p>Robots que interactúan naturalmente con humanos</p>
+                </div>
+                
+                <div class="trend-item">
+                    <h4><i class="fas fa-heartbeat"></i> IA Emocional</h4>
+                    <p>Sistemas que entienden y responden a emociones</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Articles -->
+    <section id="related-articles" style="padding: 60px 0; background: var(--card-background);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #7c3aed;">Artículos de Inteligencia Artificial</h2>
+            <div id="aiArticles" class="articles-grid">
+                <!-- Los artículos de IA se cargarán aquí -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sources and Blogs Section -->
+    <section style="padding: 60px 0; background: linear-gradient(135deg, #faf5ff, #f3e8ff);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #7c3aed;">📚 Fuentes y Blogs Especializados</h2>
+            
+            <div class="sources-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="source-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(139, 92, 246, 0.15); border: 2px solid rgba(139, 92, 246, 0.2); transition: all 0.3s ease;">
+                    <i class="fas fa-graduation-cap" style="font-size: 2.5rem; color: #8b5cf6; margin-bottom: 1rem;"></i>
+                    <h4 style="color: #7c3aed; margin-bottom: 1rem;">Recursos Académicos</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="https://www.coursera.org/specializations/machine-learning" target="_blank" style="color: #8b5cf6; text-decoration: none;">🎓 Machine Learning - Coursera</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://www.edx.org/learn/artificial-intelligence" target="_blank" style="color: #8b5cf6; text-decoration: none;">🎓 AI Courses - edX</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://arxiv.org/list/cs.AI/recent" target="_blank" style="color: #8b5cf6; text-decoration: none;">📄 Papers - arXiv</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://paperswithcode.com/" target="_blank" style="color: #8b5cf6; text-decoration: none;">📊 Papers with Code</a></li>
+                    </ul>
+                </div>
+                
+                <div class="source-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(139, 92, 246, 0.15); border: 2px solid rgba(139, 92, 246, 0.2); transition: all 0.3s ease;">
+                    <i class="fas fa-blog" style="font-size: 2.5rem; color: #8b5cf6; margin-bottom: 1rem;"></i>
+                    <h4 style="color: #7c3aed; margin-bottom: 1rem;">Blogs y Noticias</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="https://towardsdatascience.com/" target="_blank" style="color: #8b5cf6; text-decoration: none;">📝 Towards Data Science</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://machinelearningmastery.com/" target="_blank" style="color: #8b5cf6; text-decoration: none;">🤖 ML Mastery</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://www.kdnuggets.com/" target="_blank" style="color: #8b5cf6; text-decoration: none;">💎 KDnuggets</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://ai.googleblog.com/" target="_blank" style="color: #8b5cf6; text-decoration: none;">🏢 Google AI Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="source-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(139, 92, 246, 0.15); border: 2px solid rgba(139, 92, 246, 0.2); transition: all 0.3s ease;">
+                    <i class="fas fa-tools" style="font-size: 2.5rem; color: #8b5cf6; margin-bottom: 1rem;"></i>
+                    <h4 style="color: #7c3aed; margin-bottom: 1rem;">Documentación Técnica</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="https://tensorflow.org/learn" target="_blank" style="color: #8b5cf6; text-decoration: none;">🔧 TensorFlow Docs</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://pytorch.org/tutorials/" target="_blank" style="color: #8b5cf6; text-decoration: none;">🔥 PyTorch Tutorials</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://scikit-learn.org/stable/" target="_blank" style="color: #8b5cf6; text-decoration: none;">📊 Scikit-learn</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://huggingface.co/docs" target="_blank" style="color: #8b5cf6; text-decoration: none;">🤗 Hugging Face</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Forum Section -->
+    <section style="padding: 60px 0; background: linear-gradient(135deg, #581c87, #7c3aed, #8b5cf6);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: white;">💬 Foro de la Comunidad IA</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <!-- Add Comment Form -->
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 15px; margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <h3 style="color: white; margin-bottom: 1.5rem;">💭 Comparte tus ideas</h3>
+                    <form id="commentForm" style="display: grid; gap: 1rem;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <input type="text" id="userName" placeholder="Tu nombre/sobrenombre" required style="padding: 0.8rem; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.9); color: #333;">
+                            <input type="email" id="userEmail" placeholder="Email (opcional)" style="padding: 0.8rem; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.9); color: #333;">
+                        </div>
+                        <textarea id="commentText" placeholder="¿Qué opinas sobre la IA? Comparte tus experiencias, preguntas o recursos..." required style="padding: 0.8rem; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.9); color: #333; min-height: 100px; resize: vertical;"></textarea>
+                        <button type="submit" style="padding: 0.8rem 2rem; background: #8b5cf6; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;">
+                            💌 Publicar Comentario
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Comments List -->
+                <div id="commentsList" style="display: grid; gap: 1rem;">
+                    <!-- Los comentarios se cargarán aquí dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechBlog</h3>
+                    <p>Tu fuente de conocimiento tecnológico</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#articles">Artículos</a></li>
+                        <li><a href="index.html#categories">Categorías</a></li>
+                        <li><a href="index.html#about">Acerca de</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechBlog. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- YouTube Modal -->
+    <div id="youtubeModal" class="youtube-modal">
+        <div class="youtube-modal-content">
+            <button class="youtube-close" onclick="closeYouTubeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <iframe id="youtubeIframe" src="" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // YouTube Video Functions
+        function openYouTubeVideo(videoId) {
+            const modal = document.getElementById('youtubeModal');
+            const iframe = document.getElementById('youtubeIframe');
+            
+            const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+            
+            iframe.src = videoUrl;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeYouTubeModal() {
+            const modal = document.getElementById('youtubeModal');
+            const iframe = document.getElementById('youtubeIframe');
+            
+            iframe.src = '';
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        document.getElementById('youtubeModal').addEventListener('click', function(e) {
+            if (e.target === this) closeYouTubeModal();
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeYouTubeModal();
+        });
+
+        // Forum Functions
+        function loadComments() {
+            const comments = JSON.parse(localStorage.getItem('ia-comments') || '[]');
+            const container = document.getElementById('commentsList');
+            
+            if (comments.length === 0) {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 2rem; color: rgba(255,255,255,0.7);">
+                        <i class="fas fa-comments" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <p>¡Sé el primero en comentar! Comparte tus ideas sobre IA.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = comments.map(comment => `
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #8b5cf6, #a855f7); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                                ${comment.name.charAt(0).toUpperCase()}
+                            </div>
+                            <div>
+                                <div style="color: white; font-weight: bold;">${comment.name}</div>
+                                <div style="color: rgba(255,255,255,0.7); font-size: 0.8rem;">${comment.date}</div>
+                            </div>
+                        </div>
+                        <button onclick="deleteComment('${comment.id}')" style="background: none; border: none; color: rgba(255,255,255,0.5); cursor: pointer; padding: 0.5rem;" title="Eliminar comentario">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.9); line-height: 1.6; margin: 0;">${comment.text}</p>
+                </div>
+            `).join('');
+        }
+        
+        function addComment(name, email, text) {
+            const comments = JSON.parse(localStorage.getItem('ia-comments') || '[]');
+            const newComment = {
+                id: Date.now().toString(),
+                name: name,
+                email: email,
+                text: text,
+                date: new Date().toLocaleDateString('es-ES', { 
+                    year: 'numeric', month: 'short', day: 'numeric', 
+                    hour: '2-digit', minute: '2-digit' 
+                })
+            };
+            
+            comments.unshift(newComment);
+            localStorage.setItem('ia-comments', JSON.stringify(comments));
+            loadComments();
+        }
+        
+        function deleteComment(commentId) {
+            if (confirm('¿Estás seguro de que quieres eliminar este comentario?')) {
+                const comments = JSON.parse(localStorage.getItem('ia-comments') || '[]');
+                const filtered = comments.filter(c => c.id !== commentId);
+                localStorage.setItem('ia-comments', JSON.stringify(filtered));
+                loadComments();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('articles.json');
+                const data = await response.json();
+                const aiArticles = data.articles.filter(article => article.category === 'ia');
+                
+                const container = document.getElementById('aiArticles');
+                if (container && aiArticles.length > 0) {
+                    container.innerHTML = aiArticles.map(article => `
+                        <div class="article-card" onclick="window.open('article.html?id=${article.id}', '_blank')" style="cursor: pointer;">
+                            <div class="article-image">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="article-content">
+                                <div class="article-meta">
+                                    <span class="article-category" style="background: #8b5cf6;">Inteligencia Artificial</span>
+                                    <span class="article-date">${new Date(article.date).toLocaleDateString('es-ES')}</span>
+                                </div>
+                                <h3 class="article-title">${article.title}</h3>
+                                <p class="article-excerpt">${article.excerpt}</p>
+                                <div class="article-footer">
+                                    <a href="#" class="read-more">
+                                        Leer más <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                    <div class="article-stats">
+                                        <span><i class="fas fa-eye"></i> ${article.views}</span>
+                                        <span><i class="fas fa-heart"></i> ${article.likes}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    container.innerHTML = '<p style="text-align: center; color: var(--text-secondary);">No hay artículos de IA disponibles.</p>';
+                }
+            } catch (error) {
+                console.error('Error cargando artículos:', error);
+            }
+            
+            // Inicializar foro
+            loadComments();
+            
+            // Event listener para formulario de comentarios
+            document.getElementById('commentForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('userName').value.trim();
+                const email = document.getElementById('userEmail').value.trim();
+                const text = document.getElementById('commentText').value.trim();
+                
+                if (name && text) {
+                    addComment(name, email, text);
+                    this.reset();
+                    
+                    // Scroll to comments
+                    document.getElementById('commentsList').scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }
+            });
+            
+            // Menú móvil
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

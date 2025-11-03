@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia de la Informática - TechBlog</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .category-hero {
+            background: linear-gradient(135deg, #92400e, #d97706, #f59e0b);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .timeline-item {
+            background: white;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(217, 119, 6, 0.15);
+            border-left: 5px solid #d97706;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .timeline-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 12px 35px rgba(217, 119, 6, 0.25);
+        }
+        
+        .timeline-year {
+            background: linear-gradient(135deg, #92400e, #d97706);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-title {
+            color: #92400e;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .timeline-content {
+            color: #374151;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .sources {
+            background: #fef3c7;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .sources h5 {
+            color: #92400e;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .sources a {
+            color: #d97706;
+            text-decoration: none;
+            font-size: 0.8rem;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        
+        .sources a:hover {
+            text-decoration: underline;
+        }
+        
+        .evolution-section {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+        
+        .evolution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .evolution-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.15);
+            border: 2px solid rgba(217, 119, 6, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .evolution-card:hover {
+            transform: translateY(-5px);
+            border-color: #d97706;
+        }
+        
+        .evolution-card i {
+            font-size: 3rem;
+            color: #d97706;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-item {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-code"></i>
+                    <span>TechBlog</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="index.html#articles" class="nav-link">Artículos</a>
+                    <a href="index.html#categories" class="nav-link">Categorías</a>
+                    <a href="index.html#about" class="nav-link">Acerca de</a>
+                </div>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Category Hero -->
+    <section class="category-hero">
+        <div class="container">
+            <h1><i class="fas fa-history"></i> Historia de la Informática</h1>
+            <p>Un viaje desde ENIAC hasta la era moderna</p>
+            <a href="index.html" class="back-button" style="color: white; text-decoration: none; margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-arrow-left"></i> Volver al inicio
+            </a>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section style="padding: 60px 0; background: var(--card-background);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #92400e;">📅 Cronología de la Informática</h2>
+            
+            <div class="timeline">
+                <!-- ENIAC -->
+                <div class="timeline-item">
+                    <div class="timeline-year">1946</div>
+                    <h3 class="timeline-title">
+                        <i class="fas fa-microchip"></i>
+                        ENIAC - La Primera Computadora Digital
+                    </h3>
+                    <div class="timeline-content">
+                        La <strong>Electronic Numerical Integrator and Computer (ENIAC)</strong> fue la primera computadora digital de propósito general. 
+                        Pesaba 30 toneladas, ocupaba 167 m² y consumía 150 kW de energía. Desarrollada en la Universidad de Pensilvania para 
+                        cálculos balísticos del ejército estadounidense.
+                    </div>
+                    <div class="sources">
+                        <h5>📚 Fuentes:</h5>
+                        <a href="https://www.computerhistory.org/revolution/birth-of-the-computer/4/78" target="_blank">Computer History Museum - ENIAC</a>
+                        <a href="https://www.upenn.edu/almanac/between/2006/eniac.html" target="_blank">University of Pennsylvania - ENIAC History</a>
+                    </div>
+                </div>
+
+                <!-- Transistor -->
+                <div class="timeline-item">
+                    <div class="timeline-year">1947</div>
+                    <h3 class="timeline-title">
+                        <i class="fas fa-bolt"></i>
+                        Invención del Transistor
+                    </h3>
+                    <div class="timeline-content">
+                        Los científicos de Bell Labs John Bardeen, Walter Brattain y William Shockley inventaron el transistor, 
+                        reemplazando las voluminosas válvulas de vacío. Esta invención revolucionó la electrónica y 
+                        hizo posible la miniaturización de las computadoras.
+                    </div>
+                    <div class="sources">
+                        <h5>📚 Fuentes:</h5>
+                        <a href="https://www.bell-labs.com/about/history-bell-labs/timeline/transistor-invention/" target="_blank">Bell Labs - Transistor History</a>
+                        <a href="https://www.nobelprize.org/prizes/physics/1956/summary/" target="_blank">Nobel Prize - Physics 1956</a>
+                    </div>
+                </div>
+
+                <!-- Lenguajes de Programación -->
+                <div class="timeline-item">
+                    <div class="timeline-year">1957</div>
+                    <h3 class="timeline-title">
+                        <i class="fas fa-code"></i>
+                        FORTRAN - Primer Lenguaje de Alto Nivel
+                    </h3>
+                    <div class="timeline-content">
+                        IBM desarrolló FORTRAN (Formula Translation), el primer lenguaje de programación de alto nivel ampliamente utilizado. 
+                        Permitió a los programadores escribir código más cercano al lenguaje humano que al código máquina.
+                    </div>
+                    <div class="sources">
+                        <h5>📚 Fuentes:</h5>
+                        <a href="https://www.ibm.com/ibm/history/ibm100/us/en/icons/fortran/" target="_blank">IBM - FORTRAN History</a>
+                        <a href="https://dl.acm.org/doi/10.1145/1283920.1283929" target="_blank">ACM Digital Library - FORTRAN</a>
+                    </div>
+                </div>
+
+                <!-- Circuito Integrado -->
+                <div class="timeline-item">
+                    <div class="timeline-year">1958</div>
+                    <h3 class="timeline-title">
+                        <i class="fas fa-memory"></i>
+                        El Circuito Integrado
+                    </h3>
+                    <div class="timeline-content">
+                        Jack Kilby de Texas Instruments inventó el primer circuito integrado, integrando múltiples componentes 
+                        electrónicos en un solo chip de silicio. Esto marcó el inicio de la era de la microelectrónica.
+                    </div>
+                    <div class="sources">
+                        <h5>📚 Fuentes:</h5>
+                        <a href="https://www.ti.com/about-ti/company/history/kilby-ic.html" target="_blank">Texas Instruments - Jack Kilby</a>
+                        <a href="https://www.nobelprize.org/prizes/physics/2000/kilby/facts/" target="_blank">Nobel Prize - Jack Kilby</a>
+                    </div>
+                </div>
+
+                <!-- Internet -->
+                <div class="timeline-item">
+                    <div class="timeline-year">1969</div>
+                    <h3 class="timeline-title">
+                        <i class="fas fa-globe"></i>
+                        ARPANET - Nacimiento de Internet
+                    </h3>
+                    <div class="timeline-content">
+                        El Departamento de Defensa de EE.UU. creó ARPANET, la primera red de computadoras que utilizó 
+                        conmutación de paquetes. El primer mensaje se envió entre UCLA y Stanford, sentando las bases de Internet.
+                    </div>
+                    <div class="sources">
+                        <h5>📚 Fuentes:</h5>
+                        <a href="https://www.darpa.mil/about-us/timeline/arpanet" target="_blank">DARPA - ARPANET Timeline</a>
+                        <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/" target="_blank">Internet Society - History</a>
+                    </div>
+                </div>
+
+                <!-- Microprocesador -->
+                <div class="timeline-item">
+                    <div class="timeline-year">1971</div>
+                    <h3 class="timeline-title">
+                        <i class="fas fa-microchip"></i>
+                        Intel 4004 - Primer Microprocesador
+                    </h3>
+                    <div class="timeline-content">
+                        Intel lanzó el 4004, el primer microprocesador comercial del mundo. Con 2300 transistores, 
+                        tenía el poder de procesamiento de ENIAC en un chip del tamaño de una uña.
+                    </div>
+                    <div class="sources">
+                        <h5>📚 Fuentes:</h5>
+                        <a href="https://www.intel.com/content/www/us/en/history/museum-story-of-intel-4004.html" target="_blank">Intel - 4004 History</a>
+                        <a href="https://spectrum.ieee.org/intel-4004" target="_blank">IEEE Spectrum - Intel 4004</a>
+                    </div>
+                </div>
+
+                <!-- PC -->
+                <div class="timeline-item">
+                    <div class="timeline-year">1981</div>
+                    <h3 class="timeline-title">
+                        <i class="fas fa-desktop"></i>
+                        IBM PC - Computadora Personal
+                    </h3>
+                    <div class="timeline-content">
+                        IBM lanzó su primera computadora personal, estableciendo el estándar PC que dominó el mercado. 
+                        Utilizaba el sistema operativo MS-DOS de Microsoft, iniciando una era de computación personal masiva.
+                    </div>
+                    <div class="sources">
+                        <h5>📚 Fuentes:</h5>
+                        <a href="https://www.ibm.com/ibm/history/exhibits/pc25/pc25_intro.html" target="_blank">IBM - PC History</a>
+                        <a href="https://www.computerhistory.org/revolution/personal-computers/17/297" target="_blank">Computer History Museum - IBM PC</a>
+                    </div>
+                </div>
+
+                <!-- World Wide Web -->
+                <div class="timeline-item">
+                    <div class="timeline-year">1991</div>
+                    <h3 class="timeline-title">
+                        <i class="fas fa-globe-americas"></i>
+                        World Wide Web
+                    </h3>
+                    <div class="timeline-content">
+                        Tim Berners-Lee en el CERN creó la World Wide Web, el primer navegador web y el primer servidor web. 
+                        La primera página web fue info.cern.ch, revolucionando el acceso a la información.
+                    </div>
+                    <div class="sources">
+                        <h5>📚 Fuentes:</h5>
+                        <a href="https://home.cern/science/computing/birth-web" target="_blank">CERN - Birth of the Web</a>
+                        <a href="https://www.w3.org/History.html" target="_blank">W3C - WWW History</a>
+                    </div>
+                </div>
+
+                <!-- Era Moderna -->
+                <div class="timeline-item">
+                    <div class="timeline-year">2000s-2020s</div>
+                    <h3 class="timeline-title">
+                        <i class="fas fa-mobile-alt"></i>
+                        Era Digital Moderna
+                    </h3>
+                    <div class="timeline-content">
+                        La explosión de dispositivos móviles, redes sociales, computación en la nube, inteligencia artificial 
+                        y el Internet de las Cosas han transformado completamente la sociedad. Desde Google (1998) hasta ChatGPT (2022).
+                    </div>
+                    <div class="sources">
+                        <h5>📚 Fuentes:</h5>
+                        <a href="https://www.statista.com/topics/2711/worldwide-digital-transformation/" target="_blank">Statista - Digital Transformation</a>
+                        <a href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights" target="_blank">McKinsey - Digital Insights</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Evolution Overview -->
+    <section class="evolution-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #92400e;">🚀 Evolución Tecnológica</h2>
+            
+            <div class="evolution-grid">
+                <div class="evolution-card">
+                    <i class="fas fa-weight-hanging"></i>
+                    <h4>Tamaño</h4>
+                    <p>De 30 toneladas (ENIAC) a gramos (smartphones)</p>
+                </div>
+                
+                <div class="evolution-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h4>Velocidad</h4>
+                    <p>De 5000 operaciones/segundo a billones/segundo</p>
+                </div>
+                
+                <div class="evolution-card">
+                    <i class="fas fa-memory"></i>
+                    <h4>Memoria</h4>
+                    <p>De kilobytes a terabytes y más</p>
+                </div>
+                
+                <div class="evolution-card">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h4>Costo</h4>
+                    <p>De millones de dólares a cientos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Articles -->
+    <section id="related-articles" style="padding: 60px 0; background: var(--card-background);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #92400e;">Artículos de Historia</h2>
+            <div id="historyArticles" class="articles-grid">
+                <!-- Los artículos de historia se cargarán aquí -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechBlog</h3>
+                    <p>Tu fuente de conocimiento tecnológico</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#articles">Artículos</a></li>
+                        <li><a href="index.html#categories">Categorías</a></li>
+                        <li><a href="index.html#about">Acerca de</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechBlog. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('articles.json');
+                const data = await response.json();
+                const historyArticles = data.articles.filter(article => article.category === 'historia');
+                
+                const container = document.getElementById('historyArticles');
+                if (container && historyArticles.length > 0) {
+                    container.innerHTML = historyArticles.map(article => `
+                        <div class="article-card" onclick="window.open('article.html?id=${article.id}', '_blank')" style="cursor: pointer;">
+                            <div class="article-image">
+                                <i class="fas fa-history"></i>
+                            </div>
+                            <div class="article-content">
+                                <div class="article-meta">
+                                    <span class="article-category" style="background: #d97706;">Historia</span>
+                                    <span class="article-date">${new Date(article.date).toLocaleDateString('es-ES')}</span>
+                                </div>
+                                <h3 class="article-title">${article.title}</h3>
+                                <p class="article-excerpt">${article.excerpt}</p>
+                                <div class="article-footer">
+                                    <a href="#" class="read-more">
+                                        Leer más <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                    <div class="article-stats">
+                                        <span><i class="fas fa-eye"></i> ${article.views}</span>
+                                        <span><i class="fas fa-heart"></i> ${article.likes}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    container.innerHTML = '<p style="text-align: center; color: var(--text-secondary);">No hay artículos de historia disponibles.</p>';
+                }
+            } catch (error) {
+                console.error('Error cargando artículos:', error);
+            }
+            
+            // Menú móvil
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

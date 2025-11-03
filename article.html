@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="articleTitle">Artículo - TechBlog</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .article-page {
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+        
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--card-background);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+        
+        .back-button:hover {
+            background: var(--background-color);
+        }
+        
+        .article-not-found {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+        
+        .article-not-found i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .article-not-found h2 {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .loading-article {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+        
+        .loading-article i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .article-container {
+                padding: 1rem;
+                margin: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-code"></i>
+                    <span>TechBlog</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="index.html#articles" class="nav-link">Artículos</a>
+                    <a href="index.html#categories" class="nav-link">Categorías</a>
+                    <a href="index.html#about" class="nav-link">Acerca de</a>
+                </div>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Article Page -->
+    <main class="article-page">
+        <div class="container">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Volver al inicio
+            </a>
+            
+            <div id="articleContainer" class="article-container">
+                <div class="loading-article">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Cargando artículo...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechBlog</h3>
+                    <p>Tu fuente de conocimiento tecnológico</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#articles">Artículos</a></li>
+                        <li><a href="index.html#categories">Categorías</a></li>
+                        <li><a href="index.html#about">Acerca de</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechBlog. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Estado de la aplicación para la página de artículo
+        const ArticlePageState = {
+            articles: [],
+            currentArticle: null,
+            articleId: null
+        };
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                await loadArticles();
+                initializeArticlePage();
+                initializeMobileMenu();
+            } catch (error) {
+                console.error('Error inicializando página de artículo:', error);
+                showArticleNotFound();
+            }
+        });
+
+        // Cargar artículos
+        async function loadArticles() {
+            try {
+                const response = await fetch('articles.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                ArticlePageState.articles = data.articles || [];
+            } catch (error) {
+                console.error('Error cargando artículos:', error);
+                throw error;
+            }
+        }
+
+        // Inicializar página de artículo
+        function initializeArticlePage() {
+            // Obtener ID del artículo desde URL
+            const urlParams = new URLSearchParams(window.location.search);
+            ArticlePageState.articleId = parseInt(urlParams.get('id'));
+
+            if (!ArticlePageState.articleId) {
+                showArticleNotFound();
+                return;
+            }
+
+            // Buscar artículo
+            ArticlePageState.currentArticle = ArticlePageState.articles.find(
+                article => article.id === ArticlePageState.articleId
+            );
+
+            if (ArticlePageState.currentArticle) {
+                renderArticle(ArticlePageState.currentArticle);
+                updatePageTitle(ArticlePageState.currentArticle.title);
+            } else {
+                showArticleNotFound();
+            }
+        }
+
+        // Renderizar artículo
+        function renderArticle(article) {
+            const container = document.getElementById('articleContainer');
+            if (!container) return;
+
+            const categoryNames = {
+                'programacion': 'Programación',
+                'ciberseguridad': 'Ciberseguridad',
+                'ia': 'Inteligencia Artificial',
+                'web': 'Desarrollo Web',
+                'bases-datos': 'Bases de Datos',
+                'sistemas': 'Sistemas'
+            };
+
+            container.innerHTML = `
+                <article class="modal-article">
+                    <header class="modal-header">
+                        <div class="article-meta">
+                            <span class="article-category">${categoryNames[article.category] || article.category}</span>
+                            <span class="article-date">${formatDate(article.date)}</span>
+                        </div>
+                        <h1>${article.title}</h1>
+                        <div class="article-info">
+                            <span><i class="fas fa-user"></i> ${article.author}</span>
+                            <span><i class="fas fa-clock"></i> ${article.readTime}</span>
+                            <span><i class="fas fa-eye"></i> ${article.views} visualizaciones</span>
+                            <span><i class="fas fa-heart"></i> ${article.likes} me gusta</span>
+                        </div>
+                        ${article.tags ? `
+                            <div class="article-tags">
+                                ${article.tags.map(tag => `<span class="tag">#${tag}</span>`).join('')}
+                            </div>
+                        ` : ''}
+                    </header>
+                    
+                    <div class="modal-body">
+                        <div class="article-content-text">
+                            ${formatArticleContent(article.content)}
+                        </div>
+                        
+                        ${article.youtubeVideos && article.youtubeVideos.length > 0 ? `
+                            <section class="youtube-videos">
+                                <h3><i class="fab fa-youtube"></i> Videos Relacionados</h3>
+                                <div class="youtube-container">
+                                    ${article.youtubeVideos.map(videoId => `
+                                        <div class="youtube-video">
+                                            <div class="video-embed">
+                                                <iframe 
+                                                    src="https://www.youtube.com/embed/${videoId}" 
+                                                    frameborder="0" 
+                                                    allowfullscreen
+                                                    loading="lazy">
+                                                </iframe>
+                                            </div>
+                                            <div class="video-info">
+                                                <h4>Video relacionado</h4>
+                                                <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" rel="noopener">
+                                                    Ver en YouTube <i class="fas fa-external-link-alt"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </section>
+                        ` : ''}
+                        
+                        ${article.resources && article.resources.length > 0 ? `
+                            <section class="article-resources">
+                                <h3><i class="fas fa-link"></i> Recursos Adicionales</h3>
+                                <ul>
+                                    ${article.resources.map(resource => `
+                                        <li>
+                                            <a href="${resource.url}" target="_blank" rel="noopener">
+                                                ${resource.title}
+                                                <i class="fas fa-external-link-alt"></i>
+                                            </a>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </section>
+                        ` : ''}
+                    </div>
+                    
+                    <footer class="modal-footer">
+                        <div class="share-buttons">
+                            <h4>Compartir artículo:</h4>
+                            <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(article.title)}&url=${encodeURIComponent(window.location.href)}" 
+                               target="_blank" class="share-btn twitter">
+                                <i class="fab fa-twitter"></i> Twitter
+                            </a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}" 
+                               target="_blank" class="share-btn linkedin">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                            <a href="mailto:?subject=${encodeURIComponent(article.title)}&body=${encodeURIComponent('Te comparto este interesante artículo: ' + window.location.href)}" 
+                               class="share-btn email">
+                                <i class="fas fa-envelope"></i> Email
+                            </a>
+                        </div>
+                    </footer>
+                </article>
+            `;
+        }
+
+        // Mostrar artículo no encontrado
+        function showArticleNotFound() {
+            const container = document.getElementById('articleContainer');
+            if (!container) return;
+
+            container.innerHTML = `
+                <div class="article-not-found">
+                    <i class="fas fa-search"></i>
+                    <h2>Artículo no encontrado</h2>
+                    <p>El artículo que buscas no existe o ha sido eliminado.</p>
+                    <a href="index.html" class="back-button">
+                        <i class="fas fa-arrow-left"></i>
+                        Volver al inicio
+                    </a>
+                </div>
+            `;
+        }
+
+        // Actualizar título de la página
+        function updatePageTitle(title) {
+            document.getElementById('articleTitle').textContent = `${title} - TechBlog`;
+        }
+
+        // Formatear fecha
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const options = { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            return date.toLocaleDateString('es-ES', options);
+        }
+
+        // Formatear contenido del artículo (mismo que en script.js)
+        function formatArticleContent(content) {
+            return content
+                // Títulos
+                .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+                .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+                .replace(/^#### (.*$)/gm, '<h4>$1</h4>')
+                
+                // Código
+                .replace(/```(\w+)?\n([\s\S]*?)```/g, '<pre><code class="language-$1">$2</code></pre>')
+                .replace(/`([^`]+)`/g, '<code>$1</code>')
+                
+                // Listas
+                .replace(/^- (.*$)/gm, '<li>$1</li>')
+                .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
+                
+                // Checkboxes
+                .replace(/^✅ (.*$)/gm, '<div class="checkbox checked"><i class="fas fa-check"></i> $1</div>')
+                .replace(/^❌ (.*$)/gm, '<div class="checkbox unchecked"><i class="fas fa-times"></i> $1</div>')
+                
+                // Enlaces
+                .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+                
+                // Negritas
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                
+                // Párrafos
+                .replace(/\n\n/g, '</p><p>')
+                .replace(/^/, '<p>')
+                .replace(/$/, '</p>')
+                
+                // Limpiar párrafos vacíos
+                .replace(/<p><\/p>/g, '')
+                .replace(/<p>(<h[1-6]>)/g, '$1')
+                .replace(/(<\/h[1-6]>)<\/p>/g, '$1');
+        }
+
+        // Menú móvil
+        function initializeMobileMenu() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+                
+                // Cerrar menú al hacer clic en un enlace
+                const navLinks = navMenu.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+        }
+
+        console.log('Página de artículo inicializada correctamente ✅');
+    </script>
+</body>
+</html>

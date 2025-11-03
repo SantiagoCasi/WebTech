@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechBlog - Blog de Informática</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-code"></i>
+                    <span>TechBlog</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="#home" class="nav-link">Inicio</a>
+                    <a href="#articles" class="nav-link">Artículos</a>
+                    <a href="#categories" class="nav-link">Categorías</a>
+                    <a href="#about" class="nav-link">Acerca de</a>
+                </div>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Bienvenido a TechBlog</h1>
+            <p>Tu fuente de conocimiento en informática y tecnología</p>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar artículos, tutoriales...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories-section">
+        <div class="container">
+            <h2>Categorías</h2>
+            <div class="categories-grid">
+                <div class="category-card category-card-special" data-category="programacion" onclick="window.location.href='programacion.html'" style="cursor: pointer; position: relative;">
+                    <i class="fas fa-code"></i>
+                    <h3>Programación <i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-left: 0.5rem;"></i></h3>
+                    <p>Lenguajes, frameworks y desarrollo</p>
+                    <div style="position: absolute; top: 10px; right: 10px; background: var(--primary-color); color: white; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.7rem;">
+                        Página completa
+                    </div>
+                </div>
+                <div class="category-card category-card-special" data-category="sistemas" onclick="window.location.href='sistemas.html'" style="cursor: pointer; position: relative;">
+                    <i class="fas fa-server"></i>
+                    <h3>Sistemas <i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-left: 0.5rem;"></i></h3>
+                    <p>Administración y redes</p>
+                    <div style="position: absolute; top: 10px; right: 10px; background: #f97316; color: white; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.7rem;">
+                        Página completa
+                    </div>
+                </div>
+                <div class="category-card category-card-special" data-category="ia" onclick="window.location.href='ia.html'" style="cursor: pointer; position: relative;">
+                    <i class="fas fa-brain"></i>
+                    <h3>Inteligencia Artificial <i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-left: 0.5rem;"></i></h3>
+                    <p>Machine Learning y IA</p>
+                    <div style="position: absolute; top: 10px; right: 10px; background: #8b5cf6; color: white; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.7rem;">
+                        Página completa
+                    </div>
+                </div>
+                <div class="category-card category-card-special" data-category="web" onclick="window.location.href='web.html'" style="cursor: pointer; position: relative;">
+                    <i class="fas fa-globe"></i>
+                    <h3>Desarrollo Web <i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-left: 0.5rem;"></i></h3>
+                    <p>Frontend y Backend</p>
+                    <div style="position: absolute; top: 10px; right: 10px; background: #06b6d4; color: white; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.7rem;">
+                        Página completa
+                    </div>
+                </div>
+                <div class="category-card category-card-special" data-category="ciberseguridad" onclick="window.location.href='ciberseguridad.html'" style="cursor: pointer; position: relative;">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Ciberseguridad <i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-left: 0.5rem;"></i></h3>
+                    <p>Seguridad informática</p>
+                    <div style="position: absolute; top: 10px; right: 10px; background: #dc2626; color: white; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.7rem;">
+                        Página completa
+                    </div>
+                </div>
+                <div class="category-card category-card-special" data-category="bases-datos" onclick="window.location.href='bases-datos.html'" style="cursor: pointer; position: relative;">
+                    <i class="fas fa-database"></i>
+                    <h3>Bases de Datos <i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-left: 0.5rem;"></i></h3>
+                    <p>SQL, NoSQL y más</p>
+                    <div style="position: absolute; top: 10px; right: 10px; background: #059669; color: white; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.7rem;">
+                        Página completa
+                    </div>
+                </div>
+                <div class="category-card category-card-special" data-category="historia" onclick="window.location.href='historia.html'" style="cursor: pointer; position: relative;">
+                    <i class="fas fa-history"></i>
+                    <h3>Historia <i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-left: 0.5rem;"></i></h3>
+                    <p>Evolución de la informática</p>
+                    <div style="position: absolute; top: 10px; right: 10px; background: #d97706; color: white; padding: 0.25rem 0.5rem; border-radius: 12px; font-size: 0.7rem;">
+                        Página completa
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles" class="articles-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Últimos Artículos</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="programacion">Programación</button>
+                    <button class="filter-btn" data-filter="sistemas">Sistemas</button>
+                    <button class="filter-btn" data-filter="ia">IA</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="ciberseguridad">Seguridad</button>
+                    <button class="filter-btn" data-filter="bases-datos">Bases de Datos</button>
+                    <button class="filter-btn" data-filter="historia">Historia</button>
+                </div>
+            </div>
+            <div id="articlesContainer" class="articles-grid">
+                <!-- Los artículos se cargarán dinámicamente aquí -->
+            </div>
+            <div class="load-more-container">
+                <button id="loadMoreBtn" class="load-more-btn">Cargar más artículos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>Acerca de TechBlog</h2>
+            <div class="about-content">
+                <p>TechBlog es tu destino principal para aprender sobre informática y tecnología. Aquí encontrarás artículos detallados, tutoriales paso a paso, y recursos multimedia para expandir tus conocimientos en el mundo de la tecnología.</p>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-book"></i>
+                        <h3>Artículos Detallados</h3>
+                        <p>Contenido profundo y bien estructurado</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-video"></i>
+                        <h3>Videos Educativos</h3>
+                        <p>Tutoriales en video de YouTube</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-code"></i>
+                        <h3>Ejemplos Prácticos</h3>
+                        <p>Código y ejemplos reales</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechBlog</h3>
+                    <p>Tu fuente de conocimiento tecnológico</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#articles">Artículos</a></li>
+                        <li><a href="#categories">Categorías</a></li>
+                        <li><a href="#about">Acerca de</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechBlog. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Partículas mágicas del cursor -->
+    <div id="cursor-particles"></div>
+    
+    <!-- Meteoritos -->
+    <div id="meteorites-container"></div>
+    
+    <!-- Selector de temas -->
+    <div class="theme-selector">
+        <div class="theme-btn default active" data-theme="default" title="Tema Por Defecto"></div>
+        <div class="theme-btn galaxy" data-theme="galaxy" title="Modo Galaxia"></div>
+    </div>
+    
+    <!-- Mini-juego espacial (activable con tecla G) -->
+    <div id="space-game" class="hidden">
+        <div class="game-ui">
+            <div class="game-score">Score: <span id="score">0</span></div>
+            <div class="game-controls">Usa WASD o flechas - Presiona G para salir</div>
+        </div>
+        <div id="game-canvas">
+            <div id="spaceship">🚀</div>
+            <div id="asteroids-container"></div>
+        </div>
+    </div>
+
+    <!-- Modal para artículos -->
+    <div id="articleModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent">
+                <!-- Contenido del artículo se carga aquí -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

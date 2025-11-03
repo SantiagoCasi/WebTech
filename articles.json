@@ -1,0 +1,228 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Introducción a Python: Tu primer lenguaje de programación",
+      "category": "programacion",
+      "excerpt": "Aprende los fundamentos de Python, uno de los lenguajes más populares y versátiles del mundo de la programación.",
+      "content": "Python es un lenguaje de programación de alto nivel, interpretado y de propósito general. Fue creado por Guido van Rossum y lanzado por primera vez en 1991. Python se ha convertido en uno de los lenguajes más populares debido a su sintaxis clara y legible.\n\n## ¿Por qué Python?\n\nPython es ideal para principiantes por varias razones:\n- **Sintaxis simple**: Su código es fácil de leer y escribir\n- **Versatilidad**: Se puede usar para desarrollo web, ciencia de datos, IA, automatización\n- **Gran comunidad**: Amplio ecosistema de librerías y frameworks\n- **Demanda laboral**: Muy solicitado en el mercado laboral\n\n## Primeros pasos\n\n```python\n# Tu primer programa en Python\nprint('¡Hola, mundo!')\n\n# Variables y tipos de datos\nnombre = 'Juan'\nedad = 25\naltura = 1.75\nes_estudiante = True\n\nprint(f'Hola {nombre}, tienes {edad} años')\n```\n\n## Estructuras de control\n\n```python\n# Condicionales\nif edad >= 18:\n    print('Eres mayor de edad')\nelse:\n    print('Eres menor de edad')\n\n# Bucles\nfor i in range(5):\n    print(f'Número: {i}')\n\n# Listas\nfrutas = ['manzana', 'banana', 'naranja']\nfor fruta in frutas:\n    print(f'Me gusta la {fruta}')\n```\n\n## Funciones\n\n```python\ndef saludar(nombre, edad=18):\n    return f'Hola {nombre}, tienes {edad} años'\n\n# Llamada a la función\nmensaje = saludar('María', 22)\nprint(mensaje)\n```\n\nPython es perfecto para comenzar tu journey en programación. ¡Empieza hoy mismo!",
+      "author": "TechBlog Team",
+      "date": "2025-10-25",
+      "readTime": "8 min",
+      "views": 1250,
+      "likes": 89,
+      "image": "",
+      "tags": ["python", "programacion", "principiantes", "tutorial"],
+      "youtubeVideos": [
+        "rfscVS0vtbw",
+        "8DvywoWv6fI"
+      ],
+      "resources": [
+        {
+          "title": "Documentación oficial de Python",
+          "url": "https://docs.python.org/3/"
+        },
+        {
+          "title": "Python.org",
+          "url": "https://www.python.org/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Fundamentos de Ciberseguridad: Protege tu información",
+      "category": "ciberseguridad",
+      "excerpt": "Descubre los conceptos básicos de ciberseguridad y aprende a proteger tu información personal y profesional.",
+      "content": "La ciberseguridad es más importante que nunca en nuestra era digital. Con el aumento de las amenazas cibernéticas, es crucial entender cómo proteger nuestra información.\n\n## ¿Qué es la Ciberseguridad?\n\nLa ciberseguridad es la práctica de proteger sistemas, redes y programas de ataques digitales. Estos ataques suelen tener como objetivo acceder, cambiar o destruir información confidencial.\n\n## Tipos de Amenazas\n\n### Malware\n- **Virus**: Programas maliciosos que se replican\n- **Trojans**: Software que parece legítimo pero es malicioso\n- **Ransomware**: Cifra archivos y pide rescate\n- **Spyware**: Recopila información sin consentimiento\n\n### Ataques de Ingeniería Social\n- **Phishing**: Emails fraudulentos para robar credenciales\n- **Smishing**: Phishing via SMS\n- **Vishing**: Phishing via llamadas telefónicas\n\n## Mejores Prácticas de Seguridad\n\n### Contraseñas Seguras\n```\n✅ Usar contraseñas únicas para cada cuenta\n✅ Mínimo 12 caracteres\n✅ Combinar letras, números y símbolos\n✅ Usar un gestor de contraseñas\n✅ Habilitar autenticación de dos factores (2FA)\n```\n\n### Navegación Segura\n- Verificar URLs antes de hacer clic\n- Usar HTTPS siempre que sea posible\n- Mantener software actualizado\n- Usar antivirus confiable\n\n### Protección de Datos\n- Realizar copias de seguridad regulares\n- Cifrar información sensible\n- Limitar permisos de aplicaciones\n- Usar redes WiFi seguras\n\n## Herramientas Recomendadas\n\n1. **Gestores de contraseñas**: Bitwarden, 1Password\n2. **Antivirus**: Windows Defender, Malwarebytes\n3. **VPN**: ExpressVPN, NordVPN\n4. **Autenticación 2FA**: Google Authenticator, Authy\n\nLa ciberseguridad es responsabilidad de todos. Mantente informado y protegido.",
+      "author": "Cybersec Expert",
+      "date": "2025-10-24",
+      "readTime": "12 min",
+      "views": 2100,
+      "likes": 156,
+      "image": "",
+      "tags": ["ciberseguridad", "proteccion", "malware", "phishing"],
+      "youtubeVideos": [
+        "inWWhr5tnEA",
+        "9EzODqGt6Uk"
+      ],
+      "resources": [
+        {
+          "title": "NIST Cybersecurity Framework",
+          "url": "https://www.nist.gov/cyberframework"
+        },
+        {
+          "title": "KrebsOnSecurity",
+          "url": "https://krebsonsecurity.com/"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Introducción a la Inteligencia Artificial y Machine Learning",
+      "category": "ia",
+      "excerpt": "Explora el fascinante mundo de la IA y el aprendizaje automático. Conceptos, aplicaciones y futuro de esta tecnología.",
+      "content": "La Inteligencia Artificial (IA) está transformando nuestro mundo. Desde asistentes virtuales hasta coches autónomos, la IA está en todas partes.\n\n## ¿Qué es la Inteligencia Artificial?\n\nLa IA es la simulación de procesos de inteligencia humana por parte de máquinas, especialmente sistemas informáticos. Incluye aprendizaje, razonamiento y autocorrección.\n\n## Tipos de IA\n\n### IA Débil (Narrow AI)\n- Diseñada para tareas específicas\n- Ejemplos: Siri, Alexa, sistemas de recomendación\n- Es lo que tenemos actualmente\n\n### IA Fuerte (General AI)\n- Inteligencia a nivel humano\n- Puede realizar cualquier tarea intelectual\n- Aún en desarrollo\n\n### Superinteligencia\n- Supera la inteligencia humana\n- Concepto teórico\n\n## Machine Learning (Aprendizaje Automático)\n\nEl ML es un subconjunto de la IA que permite a las máquinas aprender automáticamente y mejorar con la experiencia.\n\n### Tipos de Machine Learning\n\n#### Aprendizaje Supervisado\n```python\n# Ejemplo con scikit-learn\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.model_selection import train_test_split\n\n# Dividir datos\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)\n\n# Crear y entrenar modelo\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n\n# Hacer predicciones\npredictions = model.predict(X_test)\n```\n\n#### Aprendizaje No Supervisado\n- Clustering\n- Reducción de dimensionalidad\n- Detección de anomalías\n\n#### Aprendizaje por Refuerzo\n- El agente aprende a través de recompensas\n- Usado en juegos y robótica\n\n## Aplicaciones Actuales\n\n### Salud\n- Diagnóstico médico por imágenes\n- Descubrimiento de medicamentos\n- Medicina personalizada\n\n### Transporte\n- Vehículos autónomos\n- Optimización de rutas\n- Mantenimiento predictivo\n\n### Finanzas\n- Detección de fraudes\n- Trading algorítmico\n- Evaluación de riesgos\n\n### Entretenimiento\n- Recomendaciones de contenido\n- Generación de música y arte\n- Videojuegos inteligentes\n\n## Herramientas y Frameworks\n\n### Python Libraries\n- **TensorFlow**: Framework de Google\n- **PyTorch**: Framework de Facebook\n- **Scikit-learn**: ML tradicional\n- **Pandas**: Manipulación de datos\n- **NumPy**: Computación numérica\n\n### Plataformas Cloud\n- Google Cloud AI\n- AWS Machine Learning\n- Azure Machine Learning\n\n## El Futuro de la IA\n\nLa IA continuará evolucionando y transformando industrias. Es importante mantenerse actualizado y considerar las implicaciones éticas de esta tecnología.\n\n¿Estás listo para ser parte de la revolución de la IA?",
+      "author": "AI Researcher",
+      "date": "2025-10-23",
+      "readTime": "15 min",
+      "views": 3200,
+      "likes": 234,
+      "image": "",
+      "tags": ["ia", "machine-learning", "tensorflow", "python"],
+      "youtubeVideos": [
+        "aircAruvnKk",
+        "IpGxLWOIZy4"
+      ],
+      "resources": [
+        {
+          "title": "Curso de Machine Learning de Stanford",
+          "url": "https://www.coursera.org/learn/machine-learning"
+        },
+        {
+          "title": "TensorFlow Documentation",
+          "url": "https://www.tensorflow.org/"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Desarrollo Web Moderno: HTML5, CSS3 y JavaScript ES6+",
+      "category": "web",
+      "excerpt": "Aprende las tecnologías fundamentales del desarrollo web moderno y cómo crear sitios web responsivos y dinámicos.",
+      "content": "El desarrollo web ha evolucionado enormemente. Hoy exploraremos las tecnologías modernas que todo desarrollador web debe conocer.\n\n## HTML5: La Base Semántica\n\nHTML5 introdujo elementos semánticos que mejoran la estructura y accesibilidad:\n\n```html\n<!DOCTYPE html>\n<html lang='es'>\n<head>\n    <meta charset='UTF-8'>\n    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n    <title>Mi Sitio Web</title>\n</head>\n<body>\n    <header>\n        <nav>\n            <ul>\n                <li><a href='#inicio'>Inicio</a></li>\n                <li><a href='#acerca'>Acerca</a></li>\n                <li><a href='#contacto'>Contacto</a></li>\n            </ul>\n        </nav>\n    </header>\n    \n    <main>\n        <section id='inicio'>\n            <article>\n                <h1>Bienvenido</h1>\n                <p>Contenido principal...</p>\n            </article>\n        </section>\n        \n        <aside>\n            <h2>Artículos relacionados</h2>\n        </aside>\n    </main>\n    \n    <footer>\n        <p>&copy; 2025 Mi Sitio Web</p>\n    </footer>\n</body>\n</html>\n```\n\n### Nuevas APIs de HTML5\n- **Geolocation**: Obtener ubicación del usuario\n- **Local Storage**: Almacenamiento local\n- **Canvas**: Gráficos y animaciones\n- **Web Workers**: Procesamiento en segundo plano\n\n## CSS3: Diseño Moderno\n\n### Flexbox\n```css\n.container {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    flex-wrap: wrap;\n}\n\n.item {\n    flex: 1 1 300px;\n    margin: 10px;\n}\n```\n\n### CSS Grid\n```css\n.grid {\n    display: grid;\n    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n    gap: 20px;\n    padding: 20px;\n}\n```\n\n### Variables CSS\n```css\n:root {\n    --primary-color: #3498db;\n    --secondary-color: #2ecc71;\n    --font-size: 16px;\n}\n\n.button {\n    background-color: var(--primary-color);\n    font-size: var(--font-size);\n    transition: all 0.3s ease;\n}\n\n.button:hover {\n    background-color: var(--secondary-color);\n}\n```\n\n### Animaciones CSS\n```css\n@keyframes slideIn {\n    from {\n        transform: translateX(-100%);\n        opacity: 0;\n    }\n    to {\n        transform: translateX(0);\n        opacity: 1;\n    }\n}\n\n.animated {\n    animation: slideIn 0.5s ease-out;\n}\n```\n\n## JavaScript ES6+: Funcionalidad Moderna\n\n### Arrow Functions\n```javascript\n// ES5\nfunction suma(a, b) {\n    return a + b;\n}\n\n// ES6+\nconst suma = (a, b) => a + b;\n\n// Con arrays\nconst numeros = [1, 2, 3, 4, 5];\nconst dobles = numeros.map(n => n * 2);\nconsole.log(dobles); // [2, 4, 6, 8, 10]\n```\n\n### Destructuring\n```javascript\n// Arrays\nconst [primero, segundo, ...resto] = [1, 2, 3, 4, 5];\n\n// Objetos\nconst persona = { nombre: 'Juan', edad: 30, ciudad: 'Madrid' };\nconst { nombre, edad } = persona;\n\n// En funciones\nconst saludar = ({ nombre, edad }) => {\n    console.log(`Hola ${nombre}, tienes ${edad} años`);\n};\n```\n\n### Template Literals\n```javascript\nconst nombre = 'María';\nconst edad = 25;\n\n// ES6+\nconst mensaje = `Hola ${nombre}, \nel próximo año tendrás ${edad + 1} años`;\n\n// HTML dinámico\nconst crearCard = (titulo, contenido) => `\n    <div class='card'>\n        <h3>${titulo}</h3>\n        <p>${contenido}</p>\n    </div>\n`;\n```\n\n### Promises y Async/Await\n```javascript\n// Promises\nconst fetchData = () => {\n    return fetch('/api/data')\n        .then(response => response.json())\n        .then(data => console.log(data))\n        .catch(error => console.error(error));\n};\n\n// Async/Await\nconst fetchDataAsync = async () => {\n    try {\n        const response = await fetch('/api/data');\n        const data = await response.json();\n        console.log(data);\n    } catch (error) {\n        console.error(error);\n    }\n};\n```\n\n### Modules\n```javascript\n// math.js\nexport const suma = (a, b) => a + b;\nexport const resta = (a, b) => a - b;\nexport default class Calculator {\n    // ...\n}\n\n// main.js\nimport Calculator, { suma, resta } from './math.js';\n\nconst calc = new Calculator();\nconsole.log(suma(5, 3)); // 8\n```\n\n## Herramientas Modernas\n\n### Build Tools\n- **Webpack**: Bundler de módulos\n- **Vite**: Build tool rápido\n- **Parcel**: Zero-config bundler\n\n### Frameworks/Libraries\n- **React**: Biblioteca para UIs\n- **Vue.js**: Framework progresivo\n- **Angular**: Framework completo\n- **Svelte**: Compilador de componentes\n\n### CSS Frameworks\n- **Tailwind CSS**: Utility-first\n- **Bootstrap**: Componentes predefinidos\n- **Bulma**: CSS framework moderno\n\n## Responsive Design\n\n```css\n/* Mobile First */\n.container {\n    padding: 1rem;\n}\n\n/* Tablet */\n@media (min-width: 768px) {\n    .container {\n        padding: 2rem;\n    }\n}\n\n/* Desktop */\n@media (min-width: 1024px) {\n    .container {\n        max-width: 1200px;\n        margin: 0 auto;\n        padding: 3rem;\n    }\n}\n```\n\nEl desarrollo web moderno requiere dominar estas tecnologías. ¡Practica y mantente actualizado!",
+      "author": "WebDev Pro",
+      "date": "2025-10-22",
+      "readTime": "18 min",
+      "views": 2800,
+      "likes": 198,
+      "image": "",
+      "tags": ["html5", "css3", "javascript", "web-development"],
+      "youtubeVideos": [
+        "UB1O30fR-EE",
+        "Wm6CUkswsNw"
+      ],
+      "resources": [
+        {
+          "title": "MDN Web Docs",
+          "url": "https://developer.mozilla.org/"
+        },
+        {
+          "title": "Can I Use",
+          "url": "https://caniuse.com/"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Bases de Datos: SQL vs NoSQL - ¿Cuál elegir?",
+      "category": "bases-datos",
+      "excerpt": "Comprende las diferencias entre bases de datos SQL y NoSQL, sus ventajas, desventajas y cuándo usar cada una.",
+      "content": "La elección entre SQL y NoSQL es crucial en el desarrollo de aplicaciones. Cada tipo tiene sus fortalezas y casos de uso específicos.\n\n## Bases de Datos SQL (Relacionales)\n\nLas bases de datos SQL utilizan un esquema estructurado con tablas, filas y columnas.\n\n### Características Principales\n- **ACID**: Atomicidad, Consistencia, Aislamiento, Durabilidad\n- **Esquema fijo**: Estructura predefinida\n- **Relaciones**: Claves foráneas y joins\n- **SQL**: Lenguaje estándar de consultas\n\n### Ejemplos Populares\n- **MySQL**: Open source, muy popular\n- **PostgreSQL**: Robusto, funciones avanzadas\n- **SQL Server**: Microsoft\n- **Oracle**: Empresarial\n- **SQLite**: Ligero, embebido\n\n### Consultas SQL Básicas\n\n```sql\n-- Crear tabla\nCREATE TABLE usuarios (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    nombre VARCHAR(100) NOT NULL,\n    email VARCHAR(100) UNIQUE,\n    fecha_registro DATE DEFAULT CURRENT_DATE\n);\n\n-- Insertar datos\nINSERT INTO usuarios (nombre, email) \nVALUES \n    ('Juan Pérez', 'juan@email.com'),\n    ('María García', 'maria@email.com');\n\n-- Consultar datos\nSELECT nombre, email \nFROM usuarios \nWHERE fecha_registro >= '2025-01-01'\nORDER BY nombre;\n\n-- Actualizar datos\nUPDATE usuarios \nSET email = 'nuevo@email.com' \nWHERE id = 1;\n\n-- Eliminar datos\nDELETE FROM usuarios \nWHERE fecha_registro < '2024-01-01';\n```\n\n### Joins y Relaciones\n\n```sql\n-- Crear tabla de pedidos\nCREATE TABLE pedidos (\n    id INT PRIMARY KEY AUTO_INCREMENT,\n    usuario_id INT,\n    producto VARCHAR(100),\n    precio DECIMAL(10,2),\n    fecha DATE,\n    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)\n);\n\n-- Inner Join\nSELECT u.nombre, p.producto, p.precio\nFROM usuarios u\nINNER JOIN pedidos p ON u.id = p.usuario_id;\n\n-- Left Join\nSELECT u.nombre, COUNT(p.id) as total_pedidos\nFROM usuarios u\nLEFT JOIN pedidos p ON u.id = p.usuario_id\nGROUP BY u.id, u.nombre;\n```\n\n## Bases de Datos NoSQL\n\nNoSQL (Not Only SQL) ofrece mayor flexibilidad y escalabilidad horizontal.\n\n### Tipos de NoSQL\n\n#### Document Stores\n```javascript\n// MongoDB ejemplo\n{\n  \"_id\": ObjectId(\"...\"),\n  \"nombre\": \"Juan Pérez\",\n  \"email\": \"juan@email.com\",\n  \"direccion\": {\n    \"calle\": \"Calle Principal 123\",\n    \"ciudad\": \"Madrid\",\n    \"codigo_postal\": \"28001\"\n  },\n  \"pedidos\": [\n    {\n      \"producto\": \"Laptop\",\n      \"precio\": 899.99,\n      \"fecha\": \"2025-10-20\"\n    }\n  ]\n}\n\n// Consultas MongoDB\ndb.usuarios.find({ \"direccion.ciudad\": \"Madrid\" });\ndb.usuarios.updateOne(\n  { \"_id\": ObjectId(\"...\") },\n  { \"$push\": { \"pedidos\": { \"producto\": \"Mouse\", \"precio\": 25.99 } } }\n);\n```\n\n#### Key-Value Stores\n```javascript\n// Redis ejemplo\nSET usuario:123 \"{\\\"nombre\\\":\\\"Juan\\\",\\\"email\\\":\\\"juan@email.com\\\"}\"\nGET usuario:123\nSETEX session:abc123 3600 \"user_data\" // Expira en 1 hora\n```\n\n#### Column Family\n```sql\n-- Cassandra ejemplo\nCREATE TABLE usuarios (\n    user_id UUID PRIMARY KEY,\n    nombre text,\n    email text,\n    fecha_registro timestamp\n);\n\nINSERT INTO usuarios (user_id, nombre, email, fecha_registro)\nVALUES (uuid(), 'Juan Pérez', 'juan@email.com', dateof(now()));\n```\n\n#### Graph Databases\n```cypher\n// Neo4j ejemplo\nCREATE (juan:Usuario {nombre: 'Juan', email: 'juan@email.com'})\nCREATE (maria:Usuario {nombre: 'María', email: 'maria@email.com'})\nCREATE (juan)-[:SIGUE]->(maria)\n\n// Consulta de grafos\nMATCH (u:Usuario)-[:SIGUE]->(seguido:Usuario)\nRETURN u.nombre, seguido.nombre;\n```\n\n## Comparación SQL vs NoSQL\n\n### Cuándo usar SQL\n✅ **Ventajas**\n- Transacciones ACID\n- Consultas complejas con joins\n- Esquema bien definido\n- Madurez y estabilidad\n- Herramientas abundantes\n\n✅ **Casos de uso**\n- Sistemas financieros\n- CRM/ERP\n- Aplicaciones con relaciones complejas\n- Reportes y análisis\n\n### Cuándo usar NoSQL\n✅ **Ventajas**\n- Escalabilidad horizontal\n- Flexibilidad de esquema\n- Alto rendimiento\n- Manejo de big data\n- Desarrollo ágil\n\n✅ **Casos de uso**\n- Aplicaciones web escalables\n- IoT y sensores\n- Catálogos de productos\n- Redes sociales\n- Análisis en tiempo real\n\n## Ejemplos Prácticos\n\n### E-commerce con SQL\n```sql\n-- Estructura relacional\nCREATE TABLE productos (\n    id INT PRIMARY KEY,\n    nombre VARCHAR(200),\n    precio DECIMAL(10,2),\n    categoria_id INT\n);\n\nCREATE TABLE pedidos (\n    id INT PRIMARY KEY,\n    usuario_id INT,\n    fecha DATETIME,\n    total DECIMAL(10,2)\n);\n\nCREATE TABLE detalle_pedidos (\n    pedido_id INT,\n    producto_id INT,\n    cantidad INT,\n    precio_unitario DECIMAL(10,2)\n);\n```\n\n### E-commerce con NoSQL\n```javascript\n// MongoDB - Documento completo\n{\n  \"_id\": ObjectId(\"...\"),\n  \"usuario\": {\n    \"id\": 123,\n    \"nombre\": \"Juan Pérez\",\n    \"email\": \"juan@email.com\"\n  },\n  \"pedido\": {\n    \"numero\": \"PED-2025-001\",\n    \"fecha\": \"2025-10-25\",\n    \"productos\": [\n      {\n        \"id\": 456,\n        \"nombre\": \"Laptop Gaming\",\n        \"cantidad\": 1,\n        \"precio\": 1299.99\n      },\n      {\n        \"id\": 789,\n        \"nombre\": \"Mouse Gaming\",\n        \"cantidad\": 1,\n        \"precio\": 89.99\n      }\n    ],\n    \"total\": 1389.98,\n    \"estado\": \"procesando\"\n  }\n}\n```\n\n## Tendencias Actuales\n\n### NewSQL\n- Combina ventajas de SQL y NoSQL\n- Ejemplos: CockroachDB, VoltDB\n\n### Multi-Model\n- Una base de datos, múltiples modelos\n- Ejemplos: ArangoDB, CosmosDB\n\n### Serverless\n- Bases de datos sin servidor\n- Ejemplos: FaunaDB, PlanetScale\n\nLa elección depende de tus necesidades específicas. ¿Necesitas consistencia o escalabilidad? ¿Relaciones complejas o flexibilidad? Analiza tu caso de uso y elige sabiamente.",
+      "author": "Database Architect",
+      "date": "2025-10-21",
+      "readTime": "16 min",
+      "views": 1890,
+      "likes": 142,
+      "image": "",
+      "tags": ["sql", "nosql", "mongodb", "mysql", "databases"],
+      "youtubeVideos": [
+        "W2Z7fbCLSTw",
+        "ZS_kXvOeQ5Y"
+      ],
+      "resources": [
+        {
+          "title": "SQL Tutorial - W3Schools",
+          "url": "https://www.w3schools.com/sql/"
+        },
+        {
+          "title": "MongoDB University",
+          "url": "https://university.mongodb.com/"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Administración de Sistemas Linux: Comandos Esenciales",
+      "category": "sistemas",
+      "excerpt": "Domina los comandos fundamentales de Linux para administración de sistemas, desde básicos hasta avanzados.",
+      "content": "Linux es el corazón de la mayoría de servidores modernos. Dominar sus comandos es esencial para cualquier administrador de sistemas.\n\n## Navegación y Archivos\n\n### Comandos Básicos\n```bash\n# Mostrar directorio actual\npwd\n\n# Listar archivos\nls                    # Lista básica\nls -la               # Lista detallada con archivos ocultos\nls -lh               # Tamaños legibles para humanos\nls -lt               # Ordenar por fecha de modificación\n\n# Cambiar directorio\ncd /ruta/al/directorio\ncd ~                 # Ir al directorio home\ncd -                 # Ir al directorio anterior\ncd ..                # Subir un nivel\n\n# Crear directorios\nmkdir mi_directorio\nmkdir -p ruta/completa/nueva  # Crear estructura completa\n\n# Copiar archivos\ncp archivo.txt destino/\ncp -r directorio/ destino/     # Copiar directorio recursivamente\ncp -v archivo.txt destino/     # Modo verboso\n\n# Mover/renombrar\nmv archivo.txt nuevo_nombre.txt\nmv archivo.txt /otra/ruta/\n\n# Eliminar\nrm archivo.txt\nrm -rf directorio/            # Eliminar directorio y contenido\nrmdir directorio_vacio/       # Eliminar directorio vacío\n```\n\n### Visualización de Archivos\n```bash\n# Ver contenido de archivos\ncat archivo.txt              # Mostrar todo el archivo\nless archivo.txt             # Navegable (q para salir)\nhead archivo.txt             # Primeras 10 líneas\nhead -20 archivo.txt         # Primeras 20 líneas\ntail archivo.txt             # Últimas 10 líneas\ntail -f /var/log/syslog      # Seguir archivo en tiempo real\n\n# Contar líneas, palabras, caracteres\nwc archivo.txt\nwc -l archivo.txt            # Solo líneas\nwc -w archivo.txt            # Solo palabras\n```\n\n## Búsqueda y Filtros\n\n### Comando find\n```bash\n# Buscar archivos por nombre\nfind /ruta -name \"*.txt\"\nfind . -name \"archivo*\"      # Buscar en directorio actual\nfind /home -iname \"*.PDF\"    # Insensible a mayúsculas\n\n# Buscar por tipo\nfind /var -type f            # Solo archivos\nfind /var -type d            # Solo directorios\nfind /var -type l            # Solo enlaces simbólicos\n\n# Buscar por tamaño\nfind /tmp -size +100M        # Archivos mayores a 100MB\nfind /home -size -1k         # Archivos menores a 1KB\n\n# Buscar por fecha\nfind /var/log -mtime -7      # Modificados en últimos 7 días\nfind /tmp -atime +30         # Accedidos hace más de 30 días\n\n# Ejecutar comandos en resultados\nfind /tmp -name \"*.tmp\" -delete\nfind /var/log -name \"*.log\" -exec gzip {} \\;\n```\n\n### Comando grep\n```bash\n# Buscar texto en archivos\ngrep \"error\" /var/log/syslog\ngrep -i \"error\" archivo.txt     # Insensible a mayúsculas\ngrep -r \"TODO\" /proyecto/       # Búsqueda recursiva\ngrep -n \"function\" script.js    # Mostrar números de línea\ngrep -v \"debug\" log.txt         # Invertir (líneas que NO contienen)\ngrep -c \"error\" log.txt         # Contar ocurrencias\n\n# Expresiones regulares\ngrep \"^Error\" log.txt           # Líneas que empiezan con \"Error\"\ngrep \"[0-9]\\{3\\}\" archivo.txt   # Tres dígitos consecutivos\ngrep -E \"(error|warning)\" log.txt # Expresiones extendidas\n```\n\n## Permisos y Usuarios\n\n### Gestión de Permisos\n```bash\n# Ver permisos\nls -l archivo.txt\n# Output: -rw-r--r-- 1 usuario grupo 1024 Oct 25 10:30 archivo.txt\n\n# Cambiar permisos (chmod)\nchmod 755 script.sh          # rwxr-xr-x\nchmod u+x archivo.txt        # Añadir ejecución al propietario\nchmod go-w archivo.txt       # Quitar escritura a grupo y otros\nchmod a+r archivo.txt        # Añadir lectura a todos\n\n# Cambiar propietario\nchown usuario:grupo archivo.txt\nchown -R usuario:grupo directorio/\n\n# Solo cambiar grupo\nchgrp grupo archivo.txt\n```\n\n### Información del Sistema\n```bash\n# Información de usuario\nwhoami                       # Usuario actual\nid                          # ID y grupos del usuario\ngroups                      # Grupos del usuario\nw                           # Usuarios conectados\nlast                        # Últimos logins\n\n# Cambiar usuario\nsu - usuario                # Cambiar a otro usuario\nsudo comando                # Ejecutar como root\nsudo -u usuario comando     # Ejecutar como otro usuario\n```\n\n## Procesos y Sistema\n\n### Gestión de Procesos\n```bash\n# Ver procesos\nps aux                      # Todos los procesos\nps -ef                      # Formato extendido\ntop                         # Monitor en tiempo real\nhtop                        # Versión mejorada (si está instalada)\n\n# Buscar procesos\nps aux | grep nginx\npgrep nginx                 # Solo PIDs\npkill nginx                 # Matar por nombre\n\n# Gestión de procesos\nkill PID                    # Terminar proceso\nkill -9 PID                 # Forzar terminación\nkillall nginx               # Matar todos los procesos nginx\n\n# Ejecutar en segundo plano\ncomando &                   # Ejecutar en background\nnohup comando &             # Continuar después de logout\njobs                        # Ver trabajos en background\nfg %1                       # Traer trabajo 1 al foreground\nbg %1                       # Enviar trabajo 1 al background\n```\n\n### Información del Sistema\n```bash\n# Uso del sistema\ndf -h                       # Espacio en disco\ndu -sh directorio/          # Tamaño de directorio\nfree -h                     # Memoria RAM\nuptime                      # Tiempo de funcionamiento\nuname -a                    # Información del kernel\n\n# CPU y carga\nlscpu                       # Información de CPU\n/proc/cpuinfo              # Detalles de CPU\n/proc/meminfo              # Detalles de memoria\n\n# Red\nifconfig                    # Interfaces de red (deprecated)\nip addr show                # Interfaces de red (moderno)\nnetstat -tulpn             # Puertos abiertos\nss -tulpn                  # Versión moderna de netstat\n```\n\n## Archivos de Configuración\n\n### Logs del Sistema\n```bash\n# Logs principales\n/var/log/syslog            # Log general del sistema\n/var/log/auth.log          # Autenticación\n/var/log/kern.log          # Kernel\n/var/log/dmesg             # Mensajes del kernel\n/var/log/cron.log          # Tareas programadas\n\n# Ver logs con journalctl (systemd)\njournalctl                 # Todos los logs\njournalctl -f              # Seguir logs en tiempo real\njournalctl -u nginx        # Logs de un servicio específico\njournalctl --since \"2025-10-25\"\n```\n\n### Servicios (systemd)\n```bash\n# Gestión de servicios\nsystemctl status nginx      # Estado del servicio\nsystemctl start nginx       # Iniciar servicio\nsystemctl stop nginx        # Detener servicio\nsystemctl restart nginx     # Reiniciar servicio\nsystemctl reload nginx      # Recargar configuración\n\n# Configuración de arranque\nsystemctl enable nginx      # Habilitar en arranque\nsystemctl disable nginx     # Deshabilitar en arranque\nsystemctl list-unit-files   # Listar todos los servicios\n```\n\n## Scripts y Automatización\n\n### Cron Jobs\n```bash\n# Editar crontab\ncrontab -e\n\n# Formato: minuto hora día mes día_semana comando\n# Ejemplos:\n0 2 * * * /scripts/backup.sh           # Diario a las 2:00 AM\n*/15 * * * * /scripts/check.sh          # Cada 15 minutos\n0 0 1 * * /scripts/monthly.sh          # Primer día de cada mes\n0 18 * * 5 /scripts/weekly.sh          # Viernes a las 6:00 PM\n\n# Ver crontab\ncrontab -l\n\n# Logs de cron\ntail -f /var/log/cron.log\n```\n\n### Ejemplo de Script Bash\n```bash\n#!/bin/bash\n\n# Variables\nLOG_FILE=\"/var/log/backup.log\"\nBACKUP_DIR=\"/backup\"\nSOURCE_DIR=\"/home/usuario/documentos\"\nDATE=$(date +%Y%m%d_%H%M%S)\n\n# Función de log\nlog() {\n    echo \"$(date): $1\" >> $LOG_FILE\n}\n\n# Crear backup\nlog \"Iniciando backup\"\ntar -czf \"$BACKUP_DIR/backup_$DATE.tar.gz\" \"$SOURCE_DIR\"\n\nif [ $? -eq 0 ]; then\n    log \"Backup completado exitosamente\"\nelse\n    log \"Error en el backup\"\n    exit 1\nfi\n\n# Limpiar backups antiguos (más de 7 días)\nfind $BACKUP_DIR -name \"backup_*.tar.gz\" -mtime +7 -delete\nlog \"Backups antiguos eliminados\"\n```\n\nDominar estos comandos te convertirá en un administrador de sistemas Linux efectivo. La práctica constante es clave para la maestría.",
+      "author": "SysAdmin Expert",
+      "date": "2025-10-20",
+      "readTime": "20 min",
+      "views": 1650,
+      "likes": 118,
+      "image": "",
+      "tags": ["linux", "bash", "sistemas", "comandos", "administracion"],
+      "youtubeVideos": [
+        "IVquJh3DXUA",
+        "ZtqBQ68cfJc"
+      ],
+      "resources": [
+        {
+          "title": "Linux Command Line Basics",
+          "url": "https://ubuntu.com/tutorials/command-line-for-beginners"
+        },
+        {
+          "title": "Bash Scripting Guide",
+          "url": "https://tldp.org/LDP/Bash-Beginners-Guide/html/"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "ENIAC: La Primera Computadora Digital del Mundo",
+      "category": "historia",
+      "excerpt": "Descubre la fascinante historia de ENIAC, la máquina que cambió el mundo y marcó el inicio de la era digital.",
+      "content": "La **Electronic Numerical Integrator and Computer (ENIAC)** fue la primera computadora digital electrónica de propósito general del mundo. Desarrollada entre 1943 y 1946 en la Universidad de Pensilvania, ENIAC representó un hito monumental en la historia de la computación.\n\n## Contexto Histórico\n\nDurante la Segunda Guerra Mundial, el ejército estadounidense necesitaba calcular tablas balísticas para la artillería. Estos cálculos eran extremadamente complejos y tomaban días o semanas realizarlos manualmente.\n\n## Características de ENIAC\n\n### Especificaciones Técnicas\n- **Peso**: 30 toneladas\n- **Dimensiones**: 167 m² de superficie\n- **Consumo**: 150 kilowatts de energía\n- **Componentes**: 17,468 válvulas de vacío, 7,200 diodos de cristal, 1,500 relés\n- **Velocidad**: 5,000 operaciones por segundo\n\n### Arquitectura\nENIAC utilizaba el sistema decimal en lugar del binario, procesando números de 10 dígitos. Su programación se realizaba mediante la reconfiguración física de cables y switches.\n\n## El Equipo de Desarrollo\n\n### Líderes del Proyecto\n- **J. Presper Eckert**: Ingeniero electrónico principal\n- **John Mauchly**: Físico y matemático\n- **Herman Goldstine**: Enlace militar del proyecto\n\n### Las Programadoras ENIAC\nUn aspecto poco conocido es que las primeras programadoras fueron mujeres:\n- **Kay McNulty**\n- **Jean Jennings** (Bartik)\n- **Betty Snyder** (Holberton)\n- **Marlyn Wescoff** (Meltzer)\n- **Ruth Lichterman** (Teitelbaum)\n- **Peggy Bigelow**\n\n## Impacto y Legado\n\n### Revolución Computacional\nENIAC demostró que las computadoras electrónicas podían resolver problemas complejos mucho más rápido que cualquier método anterior. Un cálculo que tomaba 20 horas manualmente, ENIAC lo completaba en 30 segundos.\n\n### Influencia en el Desarrollo Posterior\n- Inspiró el diseño de computadoras posteriores\n- Estableció principios de arquitectura computacional\n- Demostró la viabilidad comercial de las computadoras\n\n## Curiosidades\n\n- Cuando ENIAC se encendía, las luces de Filadelfia parpadeaban\n- Su primer programa calculó la viabilidad de la bomba de hidrógeno\n- Funcionó durante 10 años, desde 1946 hasta 1955\n- Costó aproximadamente $487,000 dólares (equivalente a $6.8 millones hoy)\n\n## Comparación con la Tecnología Actual\n\n| Aspecto | ENIAC (1946) | Smartphone Moderno |\n|---------|--------------|--------------------|\n| Peso | 30 toneladas | 200 gramos |\n| Velocidad | 5,000 ops/seg | Billones ops/seg |\n| Memoria | 200 bits | 128+ GB |\n| Consumo | 150 kW | 5-10 W |\n\n## Conclusión\n\nENIAC no solo fue una maravilla tecnológica de su época, sino que sentó las bases para la revolución digital que vivimos hoy. Desde smartphones hasta supercomputadoras, todos los dispositivos modernos tienen sus raíces en los principios establecidos por esta máquina pionera.\n\n**Fuentes consultadas:**\n- Computer History Museum: [ENIAC](https://www.computerhistory.org/revolution/birth-of-the-computer/4/78)\n- Universidad de Pensilvania: [ENIAC History](https://www.upenn.edu/almanac/between/2006/eniac.html)\n- IEEE Computer Society: [ENIAC Technical Details](https://computer.org/csdl/magazine/co/1996/02/r2006/13rRUxAStT)\n- Smithsonian National Museum: [ENIAC Collection](https://americanhistory.si.edu/collections/search/object/nmah_334663)",
+      "author": "Dr. Historia Tech",
+      "date": "2025-11-01",
+      "readTime": "12 min",
+      "views": 890,
+      "likes": 67,
+      "image": "",
+      "tags": ["historia", "eniac", "computadoras", "primera-generacion"],
+      "youtubeVideos": [
+        "k4oGI_dNaPc",
+        "3kQUaXRIuTU"
+      ],
+      "resources": [
+        {
+          "title": "Computer History Museum - ENIAC",
+          "url": "https://www.computerhistory.org/revolution/birth-of-the-computer/4/78"
+        },
+        {
+          "title": "University of Pennsylvania Archives",
+          "url": "https://www.upenn.edu/almanac/between/2006/eniac.html"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "La Evolución del Internet: De ARPANET a la Web Moderna",
+      "category": "historia",
+      "excerpt": "Un recorrido por la historia de Internet, desde sus orígenes militares hasta convertirse en la red global que conocemos hoy.",
+      "content": "La historia de Internet es una fascinante narrativa de innovación, colaboración y visión futurista que transformó completamente la sociedad moderna.\n\n## Los Orígenes: ARPANET (1969)\n\n### El Contexto de la Guerra Fría\nEn plena Guerra Fría, el Departamento de Defensa de Estados Unidos buscaba crear una red de comunicaciones que pudiera sobrevivir a un ataque nuclear. La **Advanced Research Projects Agency (ARPA)** inició el proyecto ARPANET.\n\n### El Primer Mensaje\nEl **29 de octubre de 1969**, se envió el primer mensaje entre dos computadoras:\n- **Origen**: UCLA (Universidad de California, Los Ángeles)\n- **Destino**: Stanford Research Institute\n- **Mensaje**: \"LO\" (intento fallido de escribir \"LOGIN\")\n- **Significado**: Nacimiento de Internet\n\n## Hitos Importantes en la Evolución\n\n### 1971: El Primer Email\n**Ray Tomlinson** envió el primer email usando el símbolo @ para separar el nombre del usuario del nombre del host.\n\n### 1973: TCP/IP\n**Vint Cerf** y **Bob Kahn** desarrollaron el protocolo TCP/IP, estableciendo las reglas fundamentales de comunicación en Internet.\n\n### 1989: World Wide Web\n**Tim Berners-Lee** en el CERN creó:\n- El primer navegador web (WorldWideWeb)\n- El primer servidor web\n- El primer sitio web: http://info.cern.ch/\n\n### 1993: Mosaic Browser\nEl navegador **Mosaic** de la Universidad de Illinois democratizó el acceso a la web con su interfaz gráfica intuitiva.\n\n## La Explosión Comercial (1990s)\n\n### Principales Desarrollos\n- **1994**: Yahoo! fundado por Jerry Yang y David Filo\n- **1995**: Amazon inicia como librería online\n- **1995**: eBay revoluciona el comercio electrónico\n- **1998**: Google transforma la búsqueda web\n\n### La Burbuja Puntocom\nEntre 1995-2000, Internet experimentó un crecimiento explosivo que culminó en la burbuja especulativa de las empresas \"puntocom\".\n\n## La Era de las Redes Sociales (2000s)\n\n### Evolución Social\n- **2003**: MySpace - Primera red social masiva\n- **2004**: Facebook - Revoluciona las conexiones personales\n- **2005**: YouTube - Democratiza la creación de contenido\n- **2006**: Twitter - Microblogging y comunicación en tiempo real\n\n## Internet Móvil y la Actualidad\n\n### Dispositivos Móviles\n- **2007**: iPhone transforma Internet móvil\n- **2008**: Android democratiza smartphones\n- **Presente**: 5.16 mil millones de usuarios de Internet móvil\n\n### Tecnologías Emergentes\n- **Internet de las Cosas (IoT)**\n- **Computación en la Nube**\n- **Inteligencia Artificial**\n- **Blockchain y Web3**\n- **Realidad Virtual/Aumentada**\n\n## Estadísticas Actuales (2025)\n\n| Métrica | Valor |\n|---------|-------|\n| Usuarios de Internet | 5.35 mil millones |\n| Sitios web activos | 1.9 mil millones |\n| Emails enviados/día | 347 mil millones |\n| Búsquedas Google/día | 8.5 mil millones |\n| Videos YouTube/día | 720,000 horas |\n\n## Protocolos y Tecnologías Clave\n\n### Protocolos Fundamentales\n- **HTTP/HTTPS**: Transferencia de hipertexto\n- **TCP/IP**: Protocolo base de Internet\n- **DNS**: Sistema de nombres de dominio\n- **SMTP**: Protocolo de correo electrónico\n\n### Infraestructura\n- **Cables submarinos**: 1.3 millones de kilómetros\n- **Servidores de nombres raíz**: 13 servidores principales\n- **Centros de datos**: Más de 8 millones globalmente\n\n## Impacto Social y Económico\n\n### Transformación Social\n- **Comunicación global instantánea**\n- **Democratización del conocimiento**\n- **Nuevas formas de trabajo remoto**\n- **Cambios en patrones de consumo**\n\n### Economía Digital\n- **E-commerce**: $5.8 billones anuales\n- **Empleos digitales**: 200+ millones\n- **Economía de aplicaciones**: $365 mil millones\n\n## Desafíos Actuales\n\n### Seguridad y Privacidad\n- Ciberataques y malware\n- Protección de datos personales\n- Regulaciones como GDPR\n\n### Brecha Digital\n- 2.7 mil millones sin acceso a Internet\n- Diferencias entre países desarrollados y en desarrollo\n- Necesidad de infraestructura en áreas rurales\n\n## El Futuro de Internet\n\n### Tendencias Emergentes\n- **6G y conectividad ultrarrápida**\n- **Internet cuántico**\n- **Web semántica e IA integrada**\n- **Realidades extendidas (XR)**\n- **Internet descentralizado (Web3)**\n\n## Conclusión\n\nDesde ese primer mensaje \"LO\" en 1969 hasta las tecnologías emergentes de hoy, Internet ha evolucionado de un proyecto militar a la infraestructura más importante de la civilización moderna. Su desarrollo continúa acelerándose, prometiendo transformaciones aún más profundas en las décadas venideras.\n\n**Fuentes consultadas:**\n- Internet Society: [Brief History of the Internet](https://www.internetsociety.org/internet/history-internet/brief-history-internet/)\n- Computer History Museum: [Internet History](https://www.computerhistory.org/internethistory/)\n- DARPA: [ARPANET Timeline](https://www.darpa.mil/about-us/timeline/arpanet)\n- W3C: [World Wide Web History](https://www.w3.org/History.html)\n- Pew Research: [Internet & Technology](https://www.pewresearch.org/internet/)",
+      "author": "Dr. Historia Tech",
+      "date": "2025-11-01",
+      "readTime": "15 min",
+      "views": 1120,
+      "likes": 94,
+      "image": "",
+      "tags": ["historia", "internet", "arpanet", "world-wide-web"],
+      "youtubeVideos": [
+        "9hIQjrMHTv4",
+        "h8K49dD52WA"
+      ],
+      "resources": [
+        {
+          "title": "Internet Society - History",
+          "url": "https://www.internetsociety.org/internet/history-internet/"
+        },
+        {
+          "title": "CERN - Birth of the Web",
+          "url": "https://home.cern/science/computing/birth-web"
+        }
+      ]
+    }
+  ]
+}
