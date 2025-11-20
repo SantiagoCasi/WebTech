@@ -1136,8 +1136,9 @@ class MeteoriteSystem {
         }, duration);
     }
 }
+/*
 
-// ===== MINI-JUEGO ESPACIAL =====
+// ===== MINI-JUEGO ESPACIAL
 class SpaceGame {
     constructor() {
         this.gameContainer = document.getElementById('space-game');
@@ -1351,7 +1352,8 @@ class SpaceGame {
         this.scoreElement.textContent = this.score;
     }
 }
-
+*/
+/*
 // ===== SISTEMA DE TEMAS =====
 class ThemeManager {
     constructor() {
@@ -1391,7 +1393,7 @@ class ThemeManager {
         });
     }
 }
-
+/*
 // ===== INICIALIZACIÓN DE SISTEMAS INTERACTIVOS =====
 let cursorParticles, meteoriteSystem, spaceGame, themeManager;
 
@@ -1426,3 +1428,5 @@ setTimeout(() => {
         localStorage.setItem('welcome-shown', 'true');
     }
 }, 2000);
+
+*/

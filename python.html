@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python - Aprende el Lenguaje Más Versátil - TechBlog</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .python-hero {
+            background: linear-gradient(135deg, #3776ab, #ffd43b);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .python-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .content-section {
+            padding: 60px 0;
+            background: var(--background-color);
+        }
+        
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .topic-card {
+            background: var(--card-background);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 4px solid #3776ab;
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .topic-card h3 {
+            color: #3776ab;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .learning-path {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            padding: 60px 0;
+        }
+        
+        .path-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .path-step {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(55, 118, 171, 0.15);
+            border-left: 5px solid #3776ab;
+        }
+        
+        .path-step h4 {
+            color: #3776ab;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .resources-section {
+            padding: 60px 0;
+            background: var(--card-background);
+        }
+        
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .resource-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            border-top: 4px solid #ffd43b;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .resource-card i {
+            font-size: 3rem;
+            color: #3776ab;
+            margin-bottom: 1rem;
+        }
+        
+        .resource-card h4 {
+            color: #3776ab;
+            margin-bottom: 1rem;
+        }
+        
+        .resource-card a {
+            color: #3776ab;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .resource-card a:hover {
+            color: #ffd43b;
+        }
+        
+        .code-example {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-left: 4px solid #3776ab;
+        }
+        
+        .code-example code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .youtube-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #3776ab, #2d5a84);
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .video-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 0, 0, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .video-info {
+            padding: 1.5rem;
+            color: white;
+        }
+        
+        .libraries-section {
+            padding: 60px 0;
+            background: var(--background-color);
+        }
+        
+        .library-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .library-card {
+            background: var(--card-background);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .library-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .library-card h4 {
+            color: #3776ab;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .python-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-code"></i>
+                    <span>TechBlog</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="programacion.html" class="nav-link">Programación</a>
+                    <a href="index.html#articles" class="nav-link">Artículos</a>
+                    <a href="index.html#about" class="nav-link">Acerca de</a>
+                </div>
+                <div class="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="python-hero">
+        <div class="container">
+            <h1><i class="fab fa-python"></i> Python</h1>
+            <p style="font-size: 1.3rem; margin-bottom: 1rem;">El lenguaje de programación más versátil y amigable</p>
+            <p style="font-size: 1.1rem; opacity: 0.9;">Desde desarrollo web hasta inteligencia artificial</p>
+            <a href="programacion.html" class="back-button" style="color: white; text-decoration: none; margin-top: 2rem; display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(0,0,0,0.2); padding: 0.8rem 1.5rem; border-radius: 8px;">
+                <i class="fas fa-arrow-left"></i> Volver a Programación
+            </a>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="content-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">¿Por qué aprender Python?</h2>
+            <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-secondary); max-width: 900px; margin: 0 auto; text-align: center;">
+                Python es uno de los lenguajes de programación más populares y demandados del mundo. Su sintaxis clara y legible 
+                lo hace perfecto para principiantes, mientras que su potencia y versatilidad lo convierten en la elección de 
+                profesionales en campos como ciencia de datos, inteligencia artificial, desarrollo web, automatización y más.
+            </p>
+
+            <div class="topic-grid">
+                <div class="topic-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Fácil de Aprender</h3>
+                    <p>Sintaxis clara y legible que se asemeja al lenguaje natural, perfecta para comenzar tu carrera en programación.</p>
+                    <div class="code-example">
+                        <code>
+# Tu primer programa en Python<br>
+print("¡Hola, mundo!")<br>
+nombre = "Python"<br>
+print(f"Me encanta {nombre}")
+                        </code>
+                    </div>
+                </div>
+
+                <div class="topic-card">
+                    <h3><i class="fas fa-brain"></i> Inteligencia Artificial</h3>
+                    <p>El lenguaje preferido para Machine Learning, Deep Learning y procesamiento de datos con librerías como TensorFlow y PyTorch.</p>
+                </div>
+
+                <div class="topic-card">
+                    <h3><i class="fas fa-globe"></i> Desarrollo Web</h3>
+                    <p>Crea aplicaciones web robustas con frameworks como Django y Flask.</p>
+                </div>
+
+                <div class="topic-card">
+                    <h3><i class="fas fa-chart-bar"></i> Análisis de Datos</h3>
+                    <p>Procesa y visualiza datos con pandas, NumPy, y Matplotlib.</p>
+                </div>
+
+                <div class="topic-card">
+                    <h3><i class="fas fa-robot"></i> Automatización</h3>
+                    <p>Automatiza tareas repetitivas y ahorra tiempo con scripts de Python.</p>
+                </div>
+
+                <div class="topic-card">
+                    <h3><i class="fas fa-users"></i> Comunidad Grande</h3>
+                    <p>Millones de desarrolladores en todo el mundo, abundantes recursos y soporte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Path -->
+    <section class="learning-path">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #3776ab;">🎯 Ruta de Aprendizaje de Python</h2>
+            
+            <div class="path-steps">
+                <div class="path-step">
+                    <h4>1. Fundamentos Básicos</h4>
+                    <p><strong>Duración:</strong> 2-3 semanas</p>
+                    <ul style="margin-top: 1rem; color: var(--text-secondary);">
+                        <li>Variables y tipos de datos (strings, números, listas, diccionarios)</li>
+                        <li>Operadores aritméticos y lógicos</li>
+                        <li>Estructuras de control (if, elif, else)</li>
+                        <li>Bucles (for, while)</li>
+                        <li>Funciones básicas y parámetros</li>
+                    </ul>
+                </div>
+
+                <div class="path-step">
+                    <h4>2. Programación Intermedia</h4>
+                    <p><strong>Duración:</strong> 3-4 semanas</p>
+                    <ul style="margin-top: 1rem; color: var(--text-secondary);">
+                        <li>Manejo de archivos (leer y escribir)</li>
+                        <li>Manejo de excepciones (try, except)</li>
+                        <li>Módulos y paquetes</li>
+                        <li>List comprehensions</li>
+                        <li>Funciones lambda</li>
+                        <li>Decoradores básicos</li>
+                    </ul>
+                </div>
+
+                <div class="path-step">
+                    <h4>3. Programación Orientada a Objetos</h4>
+                    <p><strong>Duración:</strong> 2-3 semanas</p>
+                    <ul style="margin-top: 1rem; color: var(--text-secondary);">
+                        <li>Clases y objetos</li>
+                        <li>Herencia y polimorfismo</li>
+                        <li>Encapsulamiento</li>
+                        <li>Métodos especiales (__init__, __str__, etc.)</li>
+                        <li>Propiedades y getters/setters</li>
+                    </ul>
+                </div>
+
+                <div class="path-step">
+                    <h4>4. Librerías y Frameworks Populares</h4>
+                    <p><strong>Duración:</strong> Continuo</p>
+                    <ul style="margin-top: 1rem; color: var(--text-secondary);">
+                        <li><strong>NumPy:</strong> Computación numérica</li>
+                        <li><strong>Pandas:</strong> Análisis de datos</li>
+                        <li><strong>Matplotlib/Seaborn:</strong> Visualización de datos</li>
+                        <li><strong>Django/Flask:</strong> Desarrollo web</li>
+                        <li><strong>Requests:</strong> Peticiones HTTP</li>
+                        <li><strong>Beautiful Soup:</strong> Web scraping</li>
+                    </ul>
+                </div>
+
+                <div class="path-step">
+                    <h4>5. Especialización</h4>
+                    <p><strong>Duración:</strong> Variable</p>
+                    <ul style="margin-top: 1rem; color: var(--text-secondary);">
+                        <li><strong>Data Science:</strong> Scikit-learn, TensorFlow, PyTorch</li>
+                        <li><strong>Web Development:</strong> Django REST, FastAPI</li>
+                        <li><strong>Automation:</strong> Selenium, Scrapy</li>
+                        <li><strong>Testing:</strong> Pytest, unittest</li>
+                        <li><strong>DevOps:</strong> Ansible, Docker SDK</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Libraries Section -->
+    <section class="libraries-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">📚 Librerías Esenciales de Python</h2>
+            
+            <div class="library-grid">
+                <div class="library-card">
+                    <h4>🔢 NumPy</h4>
+                    <p>Computación numérica y arrays multidimensionales</p>
+                    <a href="https://numpy.org/" target="_blank">Documentación →</a>
+                </div>
+
+                <div class="library-card">
+                    <h4>🐼 Pandas</h4>
+                    <p>Análisis y manipulación de datos estructurados</p>
+                    <a href="https://pandas.pydata.org/" target="_blank">Documentación →</a>
+                </div>
+
+                <div class="library-card">
+                    <h4>📊 Matplotlib</h4>
+                    <p>Visualización de datos y gráficos</p>
+                    <a href="https://matplotlib.org/" target="_blank">Documentación →</a>
+                </div>
+
+                <div class="library-card">
+                    <h4>🌐 Django</h4>
+                    <p>Framework web de alto nivel</p>
+                    <a href="https://www.djangoproject.com/" target="_blank">Documentación →</a>
+                </div>
+
+                <div class="library-card">
+                    <h4>⚡ Flask</h4>
+                    <p>Microframework web ligero y flexible</p>
+                    <a href="https://flask.palletsprojects.com/" target="_blank">Documentación →</a>
+                </div>
+
+                <div class="library-card">
+                    <h4>🧠 TensorFlow</h4>
+                    <p>Machine Learning y Deep Learning</p>
+                    <a href="https://www.tensorflow.org/" target="_blank">Documentación →</a>
+                </div>
+
+                <div class="library-card">
+                    <h4>🔥 PyTorch</h4>
+                    <p>Framework de ML flexible y dinámico</p>
+                    <a href="https://pytorch.org/" target="_blank">Documentación →</a>
+                </div>
+
+                <div class="library-card">
+                    <h4>🌐 Requests</h4>
+                    <p>HTTP para humanos - peticiones web simplificadas</p>
+                    <a href="https://requests.readthedocs.io/" target="_blank">Documentación →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Videos Section -->
+    <section class="youtube-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: white;">🎥 Tutoriales de Python Recomendados</h2>
+            
+            <div class="video-grid">
+                <div class="video-card" onclick="openVideo('rfscVS0vtbw')">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/rfscVS0vtbw/maxresdefault.jpg" alt="Python Tutorial">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Python para Principiantes - Tutorial Completo</h4>
+                        <p>Aprende Python desde cero en español</p>
+                    </div>
+                </div>
+
+                <div class="video-card" onclick="openVideo('chPhlsHoEPo')">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/chPhlsHoEPo/maxresdefault.jpg" alt="Python OOP">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Programación Orientada a Objetos en Python</h4>
+                        <p>Domina POO con ejemplos prácticos</p>
+                    </div>
+                </div>
+
+                <div class="video-card" onclick="openVideo('GPVsHOlRBBI')">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/GPVsHOlRBBI/maxresdefault.jpg" alt="Python Data Science">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h4>Python para Data Science</h4>
+                        <p>Pandas, NumPy y visualización de datos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="resources-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #3776ab;">🎓 Recursos de Aprendizaje</h2>
+            
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <i class="fas fa-book"></i>
+                    <h4>Documentación Oficial</h4>
+                    <p>La guía completa y oficial de Python</p>
+                    <a href="https://docs.python.org/es/" target="_blank">Visitar →</a>
+                </div>
+
+                <div class="resource-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h4>Python.org</h4>
+                    <p>Tutoriales y recursos oficiales</p>
+                    <a href="https://www.python.org/" target="_blank">Visitar →</a>
+                </div>
+
+                <div class="resource-card">
+                    <i class="fas fa-code"></i>
+                    <h4>Real Python</h4>
+                    <p>Tutoriales avanzados y artículos</p>
+                    <a href="https://realpython.com/" target="_blank">Visitar →</a>
+                </div>
+
+                <div class="resource-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>Codecademy Python</h4>
+                    <p>Curso interactivo para principiantes</p>
+                    <a href="https://www.codecademy.com/learn/learn-python-3" target="_blank">Visitar →</a>
+                </div>
+
+                <div class="resource-card">
+                    <i class="fas fa-dumbbell"></i>
+                    <h4>Python Exercises</h4>
+                    <p>Practica con ejercicios de todos los niveles</p>
+                    <a href="https://www.w3resource.com/python-exercises/" target="_blank">Visitar →</a>
+                </div>
+
+                <div class="resource-card">
+                    <i class="fab fa-github"></i>
+                    <h4>Awesome Python</h4>
+                    <p>Lista curada de frameworks y librerías</p>
+                    <a href="https://github.com/vinta/awesome-python" target="_blank">Visitar →</a>
+                </div>
+
+                <div class="resource-card">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <h4>LeetCode Python</h4>
+                    <p>Desafíos de algoritmos en Python</p>
+                    <a href="https://leetcode.com/problemset/all/?difficulty=EASY&page=1&topicSlugs=array&languageTags=python" target="_blank">Visitar →</a>
+                </div>
+
+                <div class="resource-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h4>Python Tutor</h4>
+                    <p>Visualiza la ejecución de tu código</p>
+                    <a href="http://pythontutor.com/" target="_blank">Visitar →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Examples Section -->
+    <section style="padding: 60px 0; background: var(--background-color);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">💻 Ejemplos de Código</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="margin-bottom: 3rem;">
+                    <h3 style="color: #3776ab; margin-bottom: 1rem;">Trabajando con Listas</h3>
+                    <div class="code-example">
+                        <code>
+# Crear y manipular listas<br>
+frutas = ["manzana", "banana", "naranja"]<br>
+print(frutas[0])  # manzana<br>
+<br>
+# Agregar elementos<br>
+frutas.append("uva")<br>
+<br>
+# List comprehension<br>
+cuadrados = [x**2 for x in range(10)]<br>
+print(cuadrados)  # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+                        </code>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 3rem;">
+                    <h3 style="color: #3776ab; margin-bottom: 1rem;">Funciones y Decoradores</h3>
+                    <div class="code-example">
+                        <code>
+# Función con parámetros por defecto<br>
+def saludar(nombre, mensaje="Hola"):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return f"{mensaje}, {nombre}!"<br>
+<br>
+# Decorador simple<br>
+def mi_decorador(func):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def wrapper():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Antes de la función")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;func()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print("Después de la función")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return wrapper
+                        </code>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="color: #3776ab; margin-bottom: 1rem;">Clases y Objetos</h3>
+                    <div class="code-example">
+                        <code>
+class Persona:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, nombre, edad):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.nombre = nombre<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.edad = edad<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;def presentarse(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f"Hola, soy {self.nombre} y tengo {self.edad} años"<br>
+<br>
+# Crear instancia<br>
+persona1 = Persona("Ana", 25)<br>
+print(persona1.presentarse())
+                        </code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TechBlog</h3>
+                    <p>Tu fuente de conocimiento tecnológico</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="programacion.html">Programación</a></li>
+                        <li><a href="index.html#articles">Artículos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechBlog. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div id="videoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 10000; padding: 2rem;">
+        <div style="position: relative; width: 100%; max-width: 900px; margin: 0 auto; aspect-ratio: 16/9; top: 50%; transform: translateY(-50%);">
+            <button onclick="closeVideo()" style="position: absolute; top: -40px; right: 0; background: none; border: none; color: white; font-size: 30px; cursor: pointer;">
+                <i class="fas fa-times"></i>
+            </button>
+            <iframe id="videoFrame" style="width: 100%; height: 100%; border: none; border-radius: 10px;" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // Video modal functions
+        function openVideo(videoId) {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoFrame');
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideo() {
+            const modal = document.getElementById('videoModal');
+            const iframe = document.getElementById('videoFrame');
+            iframe.src = '';
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on click outside
+        document.getElementById('videoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideo();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideo();
+            }
+        });
+    </script>
+</body>
+</html>
