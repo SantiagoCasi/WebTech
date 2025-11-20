@@ -15,14 +15,19 @@ const YOUTUBE_API_BASE = 'https://www.googleapis.com/youtube/v3';
 
 // Inicialización de la aplicación
 document.addEventListener('DOMContentLoaded', async () => {
+    console.log('🚀 Inicializando aplicación...');
     try {
         showLoading(true);
+        console.log('📥 Cargando artículos...');
         await loadArticles();
+        console.log('🎯 Inicializando event listeners...');
         initializeEventListeners();
-        renderArticles();
+        console.log('🎨 Filtrando y renderizando artículos...');
+        filterAndRenderArticles();
         showLoading(false);
+        console.log('✅ Aplicación inicializada correctamente');
     } catch (error) {
-        console.error('Error inicializando la aplicación:', error);
+        console.error('❌ Error inicializando la aplicación:', error);
         showError('Error cargando los artículos. Por favor, recarga la página.');
         showLoading(false);
     }
@@ -30,17 +35,21 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // Cargar artículos desde el archivo JSON
 async function loadArticles() {
+    console.log('🔄 Intentando cargar articles.json...');
     try {
         const response = await fetch('articles.json');
+        console.log('📡 Respuesta del fetch:', response.status, response.statusText);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
+        console.log('📄 Datos recibidos:', data);
         AppState.articles = data.articles || [];
         AppState.filteredArticles = [...AppState.articles];
-        console.log(`Cargados ${AppState.articles.length} artículos`);
+        console.log(`✅ Cargados ${AppState.articles.length} artículos exitosamente`);
+        console.log('📝 Primeros 3 artículos:', AppState.articles.slice(0, 3));
     } catch (error) {
-        console.error('Error cargando artículos:', error);
+        console.error('❌ Error cargando artículos:', error);
         // Datos de respaldo en caso de error
         AppState.articles = [];
         AppState.filteredArticles = [];
@@ -277,10 +286,21 @@ function filterAndRenderArticles() {
 
 // Renderizar artículos
 function renderArticles(append = false) {
+    console.log('🎨 Renderizando artículos...');
+    console.log('📊 Estado actual:', {
+        totalArticles: AppState.articles.length,
+        filteredArticles: AppState.filteredArticles.length,
+        currentPage: AppState.currentPage,
+        currentFilter: AppState.currentFilter
+    });
+    
     const container = document.getElementById('articlesContainer');
     const loadMoreBtn = document.getElementById('loadMoreBtn');
     
-    if (!container) return;
+    if (!container) {
+        console.error('❌ No se encontró el contenedor de artículos');
+        return;
+    }
     
     const startIndex = (AppState.currentPage - 1) * AppState.articlesPerPage;
     const endIndex = startIndex + AppState.articlesPerPage;
@@ -289,11 +309,14 @@ function renderArticles(append = false) {
         endIndex
     );
     
+    console.log('📋 Artículos a mostrar:', articlesToShow.length, 'de', AppState.filteredArticles.length);
+    
     if (!append) {
         container.innerHTML = '';
     }
     
     if (articlesToShow.length === 0 && !append) {
+        console.log('⚠️ No hay artículos para mostrar');
         container.innerHTML = `
             <div class="no-articles">
                 <i class="fas fa-search"></i>
@@ -306,6 +329,7 @@ function renderArticles(append = false) {
     }
     
     articlesToShow.forEach((article, index) => {
+        console.log(`📄 Creando tarjeta para: ${article.title}`);
         const articleElement = createArticleCard(article);
         articleElement.style.animationDelay = `${index * 0.1}s`;
         container.appendChild(articleElement);
@@ -315,11 +339,15 @@ function renderArticles(append = false) {
     if (loadMoreBtn) {
         const hasMore = endIndex < AppState.filteredArticles.length;
         loadMoreBtn.style.display = hasMore ? 'block' : 'none';
+        console.log('🔄 Botón "Cargar más":', hasMore ? 'visible' : 'oculto');
     }
+    
+    console.log('✅ Renderizado completado');
 }
 
 // Crear tarjeta de artículo
 function createArticleCard(article) {
+    console.log('🏗️ Creando tarjeta para artículo:', article.title);
     const card = document.createElement('div');
     card.className = 'article-card';
     card.onclick = () => openArticleModal(article);
@@ -330,7 +358,8 @@ function createArticleCard(article) {
         'ia': 'Inteligencia Artificial',
         'web': 'Desarrollo Web',
         'bases-datos': 'Bases de Datos',
-        'sistemas': 'Sistemas'
+        'sistemas': 'Sistemas',
+        'historia': 'Historia'
     };
     
     card.innerHTML = `
@@ -681,6 +710,12 @@ function showLoading(show) {
                 <p>Cargando artículos...</p>
             </div>
         `;
+    } else {
+        // Limpiar el contenedor cuando no se está cargando
+        // Solo si actualmente está mostrando el loading
+        if (container.querySelector('.loading-articles')) {
+            container.innerHTML = '';
+        }
     }
 }
 
